@@ -2,9 +2,9 @@ import React from 'react';
 import './App.css';
 import Navbar from './Navbar';
 import { BrowserRouter, Route, Switch } from "react-router-dom"; 
-import Korb from './components/Korb';
-import Login from './components/Login';
-import Home from './components/Home';
+import Korb from './pages/Korb';
+import Login from './pages/Login';
+import Home from './pages/Home';
 
 function App() {
   return (
