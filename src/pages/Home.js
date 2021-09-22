@@ -1,9 +1,14 @@
 import React from 'react'
 
-function Home() {
+function Home({products}) {
+
     return (
         <div>
-            Home
+            {products.map(product => {
+                return (
+                    <h4>{product.name}</h4>
+                )
+            })}
         </div>
     )
 }
