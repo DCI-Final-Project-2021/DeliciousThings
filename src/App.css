@@ -1,88 +1,91 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-li {
-    list-style-type: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
 }
 
 a {
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
+  transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -webkit-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+}
+
+a:hover {
+  text-decoration: none;
+  outline: none;
+}
+
+li {
+  list-style-type: none;
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    min-height: 10vh;
-    align-items: center;
-    font-family: inter;
-    background-color: black;
-    color: white;
+  display: flex;
+  justify-content: space-between;
+  min-height: 10vh;
+  align-items: center;
+  font-family: inter;
+  background-color: black;
+  color: white;
 }
-
 nav .logo {
-    font-size: 22px;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin: 15px;
-    
-
+  font-size: 22px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 15px;
 }
-
+nav .burger {
+  font-size: 30px;
+  display: none;
+  cursor: pointer;
+}
 nav .nav-links {
-
-display: flex;
-justify-content: space-around;
-width: 15%;
+  display: flex;
+  justify-content: space-around;
+  width: 15%;
 }
 nav .nav-links a {
-    font-size: 18px;
-    font-weight: normal;
-    cursor: pointer;
+  font-size: 18px;
+  font-weight: normal;
+  cursor: pointer;
 }
 nav .nav-links a:hover {
-    border-bottom:  2px solid orange;
-}
-
-nav .burger {
-    font-size: 30px;
-    display: none;
-    cursor: pointer;
-
+  border-bottom: 2px solid orange;
 }
 
 @media all and (max-width: 768px) {
-    nav .burger {
-        display: block;
-        margin: 10px;
-    }
-    nav .logo {
-        margin: 10px;
-
-    }
-
-    nav .nav-links {
-        position: absolute;
-        display: block;
-        top: 10vh;
-        left: 0;
-        height: 90vh;
-        background: black;
-        padding: 40px;
-        width: 50%;
-        transform: translate(0px);
-        transition: 0.5s ease-in-out;
-        
-    }
-    nav .nav-links li {
-        padding: 25px;
-        border-bottom: 1px solid #ccc;
-        
-    }
-    
-    nav .nav-links a:hover {
-        border-bottom: 1px solid orange;
-    }
+  nav .burger {
+    display: block;
+    margin: 10px;
+  }
+  nav .logo {
+    margin: 10px;
+  }
+  nav .nav-links {
+    position: absolute;
+    display: block;
+    top: 10vh;
+    left: 0;
+    height: 90vh;
+    background: black;
+    padding: 40px;
+    width: 50%;
+    transform: translate(0px);
+    transition: 0.5s ease-in-out;
+  }
+  nav .nav-links li {
+    padding: 25px;
+    border-bottom: 1px solid #ccc;
+  }
+  nav .nav-links a:hover {
+    border-bottom: 1px solid orange;
+  }
 }
+
+/*# sourceMappingURL=App.css.map */
