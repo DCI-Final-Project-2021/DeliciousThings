@@ -7,10 +7,9 @@ function Home() {
 
   useEffect(() => {
     menu.map((item) => {
-      !categories.includes(item.category)
+      return !categories.includes(item.category)
         ? categories.push(item.category)
         : null;
-      console.log(categories);
     });
     setCategories(categories);
   }, []);

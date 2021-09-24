@@ -1,9 +1,10 @@
 import React from 'react'
+import LeerKorb from '../components/LeerKorb'
 
 function Korb() {
     return (
         <div>
-            Korb
+            <LeerKorb />
         </div>
     )
 }
