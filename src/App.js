@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import Navbar from './Navbar';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Navbar from './components/Navbar';
 import Korb from './pages/Korb';
 import Login from './pages/Login';
 import Home from './pages/Home';
@@ -27,7 +27,6 @@ function App() {
           <Route exact path="/" > <Home products={products} /> </Route>
           <Route path="/korb"> <Korb /> </Route>
           <Route path="/login"> <Login /> </Route>
-
         </Switch>
       </BrowserRouter>
     </div>
