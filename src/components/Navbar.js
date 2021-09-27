@@ -22,7 +22,11 @@ function Navbar() {
             <NavLink to="/login">Login</NavLink>
           </li>
         </ul>
-        <i onClick={() => setOpen(!open)} className="fas fa-bars burger"></i>
+        <div className="styledBurger" onClick={() => setOpen(!open)}>
+          <div className={open ? "rot1 bg-color" : "basic"} />
+          <div className={open ? "rot2 bg-color" : "basic"} />
+          <div className={open ? "rot3 bg-color" : "basic"} />
+        </div>
       </nav>
     </div>
   );

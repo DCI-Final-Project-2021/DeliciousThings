@@ -9,6 +9,7 @@ import './App.css';
 
 function App() {
   const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState([1,2,3,4,5,6,7,8]);
 
   const url = "http://localhost:2005/orders";
   //url degisecek
@@ -25,7 +26,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path="/" > <Home products={products} /> </Route>
-          <Route path="/korb"> <Korb /> </Route>
+          <Route path="/korb"> <Korb cart={cart}/> </Route>
           <Route path="/login"> <Login /> </Route>
         </Switch>
       </BrowserRouter>
