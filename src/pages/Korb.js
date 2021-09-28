@@ -4,7 +4,10 @@ import LeerKorb from "../components/LeerKorb";
 function Korb({ cart }) {
   return (
     <div>
-      {cart ? (
+      {
+      cart.length > 0 
+      ? 
+      (
         <div className="carts">
           <h1>Alisveris Sepeti</h1>
           <div className="xyz">
@@ -12,7 +15,7 @@ function Korb({ cart }) {
               {cart.map((item) => {
                 return (
                   <div className="cart-item">
-                    <h6>{item}</h6>
+                    <h6>{item.name}</h6>
                   </div>
                 );
               })}
@@ -20,7 +23,9 @@ function Korb({ cart }) {
             <div>buraya özet</div>
           </div>
         </div>
-      ) : (
+      ) 
+      : 
+      (
         <LeerKorb />
       )}
     </div>
