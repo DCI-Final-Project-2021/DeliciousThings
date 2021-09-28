@@ -4,8 +4,10 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Korb from './pages/Korb';
 import Login from './pages/Login';
 import Home from './pages/Home';
+import Form from './pages/Forms';
 import api from './api/fetchDataFromDB';
 import './App.css';
+import menu from "./menu.json";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -13,21 +15,33 @@ function App() {
   const url = "http://localhost:2005/orders";
   //url degisecek
 
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    menu.map((item) => {
+      return (
+        !categories.includes(item.category)
+        ? categories.push(item.category)
+        : null
+        )
+    });
+    setCategories(categories);
+  }, []);
+
   useEffect(() => {
     api.fetchDataFromDataBase(url)
       .then(abc => setProducts(abc));
-  }, []);
+  }, [url]);
 
-  console.log(products);
   return (
     <div className="App">
       <BrowserRouter>
         <Navbar />
         <Switch>
-          <Route exact path="/" > <Home products={products} /> </Route>
+          <Route exact path="/" > <Home products={products} categories={categories} /> </Route>
           <Route path="/korb"> <Korb /> </Route>
           <Route path="/login"> <Login /> </Route>
-
+          <Route path="/form"> <Form /> </Route>
         </Switch>
       </BrowserRouter>
     </div>

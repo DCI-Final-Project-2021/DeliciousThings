@@ -5,7 +5,7 @@ function Item({ item }) {
     <div >
       <div className="item">
         <h6>{item.name}</h6>
-        <img src={item.image}></img>
+        <img src={item.image} alt="123"></img>
         <button>Add to Cart</button>
       </div>
     </div>

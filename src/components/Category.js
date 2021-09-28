@@ -7,8 +7,8 @@ function Category({ category }) {
     <div className="category">
       <h1>{category}</h1>
       <div className="items">
-        {menu.map((item) => {
-          return item.category === category ? <Item item={item} /> : null;
+        {menu.map((item, i) => {
+          return item.category === category ? <Item item={item} key={i} /> : null;
         })}
       </div>
     </div>
