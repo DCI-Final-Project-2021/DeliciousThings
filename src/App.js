@@ -4,13 +4,12 @@ import Korb from './pages/Korb';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import Form from './pages/Forms';
-import api from './api/fetchDataFromDB';
+import Navbar from "./components/Navbar";
 import './App.css';
 import menu from "./menu.json";
-import Navbar from "./components/Navbar";
+import api from './api/fetchDataFromDB';
 
 function App() {
-  // const [cart, setCart] = useState([]);
   const [cart, setCart] = useState(() => {
     const localData = localStorage.getItem("carts");
     return localData ? JSON.parse(localData) : [];
@@ -35,7 +34,6 @@ function App() {
   }, []);
 
   useEffect(() => {
-
     api.fetchDataFromDataBase(url)
       .then(abc => setProducts(abc));
   }, [url]);

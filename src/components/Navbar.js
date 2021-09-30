@@ -9,6 +9,8 @@ function Navbar() {
   root.style.setProperty('--open', !open)
   }, [open])
 
+  // bu useEffect kontrol edilecek
+
   return (
     <div>
       <nav>

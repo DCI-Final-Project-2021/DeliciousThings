@@ -2,8 +2,7 @@ import React from "react";
 
 function Item({ item, cart, setCart }) {
   const addItemToCart = () => {
-    cart.push(item);
-    setCart(cart);
+    setCart([...cart, item]);
   };
 
   return (
