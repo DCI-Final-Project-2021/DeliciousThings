@@ -1,0 +1,36 @@
+.carts {
+    margin: 0 auto;
+    max-width: 90vw;
+    min-height: 75vh;
+    
+    .xyz {
+        display: flex;
+        flex-direction: row;
+
+        div {
+            &:first-child{
+                flex: 2;
+            }
+            flex: 1;
+        }
+    }
+
+    h1 {
+        margin: 20px 0;
+        background-color: $third-color;
+        color: $first-color;
+        text-align: center;
+        text-transform: capitalize;
+        padding: 25px;
+    }
+    
+    .cart-item {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        border: 1px solid;
+        min-height: 100px;
+        margin: 5px 0;
+      }
+
+}
