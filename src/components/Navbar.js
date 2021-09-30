@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+  const root = document.documentElement;
+  root.style.setProperty('--open', !open)
+  }, [open])
 
   return (
     <div>
@@ -22,6 +27,7 @@ function Navbar() {
             <NavLink to="/login">Login</NavLink>
           </li>
         </ul>
+       
         <div className="styledBurger" onClick={() => setOpen(!open)}>
           <div className={open ? "rot1 bg-color" : "basic"} />
           <div className={open ? "rot2 bg-color" : "basic"} />
