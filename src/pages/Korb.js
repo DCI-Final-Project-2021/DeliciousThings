@@ -1,7 +1,14 @@
 import React from "react";
 import LeerKorb from "../components/LeerKorb";
+import { useHistory } from "react-router-dom";
 
 function Korb({ cart }) {
+    let history = useHistory();
+  
+    const viewForm = () => {
+    history.push("/form");
+  };
+  
   return (
     <div>
       {
@@ -19,6 +26,7 @@ function Korb({ cart }) {
                   </div>
                 );
               })}
+              <input type="submit" onClick={viewForm}></input>
             </div>
             <div>buraya özet</div>
           </div>
@@ -28,6 +36,7 @@ function Korb({ cart }) {
       (
         <LeerKorb />
       )}
+
     </div>
   );
 }

@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Category from "../components/Category";
-import menu from "../menu.json";
 
-function Home({cart, setCart}) {
+function Home({categories, cart, setCart}) {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
