@@ -55,10 +55,10 @@ function Forms() {
           City:
           <input type="text" name="city" />
         </label>
-        <label>
+        {/* <label>
           City:
           <input type="text" name="city" />
-        </label>
+        </label> */}
         <label>
         <input type="submit" value="Submit" />
         </label>
