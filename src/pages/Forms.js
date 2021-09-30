@@ -1,7 +1,17 @@
-import React from "react";
+import React, {useState} from "react";
 import { useHistory } from "react-router-dom";
 
 function Forms() {
+  const [customerData, setCustomerData] = useState({
+      name: "",
+      surname: "",
+      email: "",
+      detail: "",
+      tel: "",
+      address: "",
+      city: "",
+  });
+
   let history = useHistory();
 
   const submitForm = () => {
@@ -11,14 +21,7 @@ function Forms() {
       headers: {
         "Content-type": "application/json",
       },
-      body: JSON.stringify({
-        name: "deneme name",
-        detail: "deneme detail",
-        customerId: "deneme id customer",
-        date: "deneme name",
-        price: "beles",
-        driver: "yok",
-      }),
+      body: JSON.stringify(customerData),
     };
 
     fetch(url, options)
@@ -33,34 +36,30 @@ function Forms() {
       <form onSubmit={submitForm}>
         <label>
           Name:
-          <input type="text" name="name" />
+          <input type="text" name="name" value={customerData.name} onChange={(e)=> setCustomerData({...customerData, name:e.target.value})} />
         </label>
         <label>
           Surname:
-          <input type="text" name="surname" />
+          <input type="text" name="surname" value={customerData.surname} onChange={(e)=> setCustomerData({...customerData, surname:e.target.value})} />
         </label>
         <label>
           Email:
-          <input type="email" name="email" />
+          <input type="email" name="email" value={customerData.email} onChange={(e)=> setCustomerData({...customerData, email:e.target.value})} />
         </label>
         <label>
           Telefonnummer:
-          <input type="text" name="telefon" />
+          <input type="text" name="telefon" value={customerData.tel} onChange={(e)=> setCustomerData({...customerData, tel:e.target.value})} />
         </label>
         <label>
           Adress:
-          <input type="text" name="adress" />
+          <input type="text" name="adress" value={customerData.address} onChange={(e)=> setCustomerData({...customerData, address:e.target.value})} />
         </label>
         <label>
           City:
-          <input type="text" name="city" />
+          <input type="text" name="city" value={customerData.city} onChange={(e)=> setCustomerData({...customerData, city:e.target.value})} />
         </label>
-        {/* <label>
-          City:
-          <input type="text" name="city" />
-        </label> */}
         <label>
-        <input type="submit" value="Submit" />
+          <input type="submit" value="Submit" />
         </label>
       </form>
     </div>
