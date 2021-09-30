@@ -1,5 +1,5 @@
 import React from "react";
-import LeerKorb from "../components/LeerKorb";
+import LeerKorb from "../components/Leerkorb";
 import { useHistory } from "react-router-dom";
 
 function Korb({ cart }) {
