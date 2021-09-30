@@ -3,18 +3,15 @@ import LeerKorb from "../components/LeerKorb";
 import { useHistory } from "react-router-dom";
 
 function Korb({ cart }) {
-    let history = useHistory();
-  
-    const viewForm = () => {
+  let history = useHistory();
+
+  const viewForm = () => {
     history.push("/form");
   };
-  
+
   return (
     <div>
-      {
-      cart.length > 0 
-      ? 
-      (
+      {cart.length > 0 ? (
         <div className="carts">
           <h1>Alisveris Sepeti</h1>
           <div className="xyz">
@@ -31,12 +28,9 @@ function Korb({ cart }) {
             <div>buraya özet</div>
           </div>
         </div>
-      ) 
-      : 
-      (
+      ) : (
         <LeerKorb />
       )}
-
     </div>
   );
 }
