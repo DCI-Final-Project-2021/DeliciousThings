@@ -8,10 +8,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-<<<<<<< HEAD
-=======
-    
->>>>>>> origin/feature/korbpage-019
 
     div {
         display: flex;
@@ -20,22 +16,14 @@
         width: 200px;
         height: 200px;
         border: 1px solid $first-color;
-<<<<<<< HEAD
-=======
-        
->>>>>>> origin/feature/korbpage-019
     }
     
-    button {
+    input {
         height: 50px;
         width: 150px;
         color: $first-color;
         background-color: $second-color;
         text-transform: uppercase;
-<<<<<<< HEAD
-=======
         transition: 0.5s ease-in-out;
->>>>>>> origin/feature/korbpage-019
     }
-    
 }
