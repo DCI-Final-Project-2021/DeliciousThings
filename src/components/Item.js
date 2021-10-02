@@ -2,7 +2,17 @@ import React from "react";
 
 function Item({ item, cart, setCart }) {
   const addItemToCart = () => {
-    setCart([...cart, item]);
+    
+    let objIndex = cart.findIndex((obj) => obj.name === item.name);
+    
+    if (objIndex === -1) {
+      item.count = 1;
+      setCart([...cart, item]);
+    } else {
+      cart[objIndex].count += 1;
+      const newCart = [...cart];
+      setCart(newCart);
+    }
   };
 
   return (
