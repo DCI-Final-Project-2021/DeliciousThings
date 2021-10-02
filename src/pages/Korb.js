@@ -18,8 +18,10 @@ function Korb({ cart }) {
             <div className="carts-items">
               {cart.map((item, i) => {
                 return (
-                  <div className="cart-item">
-                    <h6>{i+1}. {item.name}</h6>
+                  <div className="cart-item" key={i} >
+                    <p>{i+1}. {item.name}</p>
+                    <p>Adet: {item.count}</p>
+                    <p>Fiyat: {item.price}</p>
                   </div>
                 );
               })}
