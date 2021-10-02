@@ -3,6 +3,7 @@
         "category": "burger",
         "name": "Cheeseburger",
         "description": "mit Salat, Cheddar, frischen Zwiebeln, eingelegten Gurken",
+        "price": "12€",
         "image": "https://cdn.pixabay.com/photo/2017/09/18/16/53/burger-2762371_960_720.jpg"
     },
     {
