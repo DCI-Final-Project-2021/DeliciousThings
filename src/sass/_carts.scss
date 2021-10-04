@@ -23,11 +23,20 @@
   
         .cart-item {
           display: flex;
-          align-items: center;
+          align-items: flex-start;
           min-height: 50px;
           margin: 5px 0;
           p {
-            flex: 1;
+            flex: 3;
+            &.gecici {
+              flex: 1; 
+            }
+          }
+          button {
+            background-color: $first-color;
+            flex-basis: 30px;
+            padding: 0;
+            margin: 0 5px;
           }
         }
       }

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import api from "../api/fetchDataFromDB";
 
-function Forms() {
+function Forms({ cart, totalPrice }) {
   const [customerData, setCustomerData] = useState({
     name: "",
     surname: "",
@@ -12,9 +12,9 @@ function Forms() {
     city: "",
   });
   const [order, setOrder] = useState({
-    food: ["Bugünkü siparis"],
+    food: [...cart],
     customerId: "",
-    total: "burayi hesapla",
+    total: totalPrice,
   });
 
   let history = useHistory();
