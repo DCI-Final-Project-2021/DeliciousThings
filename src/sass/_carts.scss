@@ -13,7 +13,7 @@
       display: flex;
       flex-direction: row;
       box-shadow: 0 0 5px $base-color;
-      border-radius: 10px;
+      border-radius: 10px 10px 0 0;
       padding: 4%;
       min-height: 80vh;
       
@@ -23,9 +23,21 @@
   
         .cart-item {
           display: flex;
-          align-items: center;
+          align-items: flex-start;
           min-height: 50px;
           margin: 5px 0;
+          p {
+            flex: 3;
+            &.gecici {
+              flex: 1; 
+            }
+          }
+          button {
+            background-color: $first-color;
+            flex-basis: 30px;
+            padding: 0;
+            margin: 0 5px;
+          }
         }
       }
   

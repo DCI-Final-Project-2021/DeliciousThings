@@ -16,7 +16,7 @@ function App() {
   });
 
   const [products, setProducts] = useState([]);
-
+  const [totalPrice, setTotalPrice] = useState(0);
   const url = "http://localhost:2005/orders";
   //url degisecek
 
@@ -47,10 +47,10 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Switch>
-          <Route exact path="/" > <Home products={products} categories={categories} cart={cart} setCart={setCart} /> </Route>
-          <Route path="/korb"> <Korb cart={cart}/> </Route>
+          <Route exact path="/" > <Home products={products} categories={categories} cart={cart} setCart={setCart} totalPrice={totalPrice} setTotalPrice={setTotalPrice} /> </Route>
+          <Route path="/korb"> <Korb cart={cart} setCart={setCart} totalPrice={totalPrice} setTotalPrice={setTotalPrice} /> </Route>
           <Route path="/login"> <Login /> </Route>
-          <Route path="/form"> <Form /> </Route>
+          <Route path="/form"> <Form cart={cart} totalPrice={totalPrice} /> </Route>
         </Switch>
       </BrowserRouter>
     </div>
