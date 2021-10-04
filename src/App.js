@@ -16,7 +16,16 @@ function App() {
   });
 
   const [products, setProducts] = useState([]);
-  const [totalPrice, setTotalPrice] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(() => {
+    let total = 0;
+    cart.map(item => {
+      total += (item.price.slice(0, -1) * 1) * item.count;
+      console.log(total);
+      return total
+    })
+    console.log("map disi", total);
+    return total;
+  });
   const url = "http://localhost:2005/orders";
   //url degisecek
 
