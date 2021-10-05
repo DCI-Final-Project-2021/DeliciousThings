@@ -28,7 +28,7 @@ function App() {
   //url degisecek
 
   const [categories, setCategories] = useState([]);
-
+  const [open, setOpen] = useState(false);
   useEffect(() => {
     menu.map((item) => {
       return (
@@ -52,12 +52,16 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar />
+        <Navbar open={open} setOpen={setOpen} />
         <Switch>
-          <Route exact path="/" > <Home products={products} categories={categories} cart={cart} setCart={setCart} totalPrice={totalPrice} setTotalPrice={setTotalPrice} /> </Route>
-          <Route path="/cart"> <Cart cart={cart} setCart={setCart} totalPrice={totalPrice} setTotalPrice={setTotalPrice} /> </Route>
-          <Route path="/login"> <Login /> </Route>
-          <Route path="/form"> <Form cart={cart} totalPrice={totalPrice} /> </Route>
+          <Route exact path="/"> 
+            <Home  products={products} categories={categories} cart={cart} setCart={setCart} totalPrice={totalPrice} setTotalPrice={setTotalPrice} open={open} /> </Route>
+          <Route path="/cart"> 
+            <Cart cart={cart} setCart={setCart} totalPrice={totalPrice} setTotalPrice={setTotalPrice} /> </Route>
+          <Route path="/login"> 
+            <Login /> </Route>
+          <Route path="/form"> 
+            <Form cart={cart} totalPrice={totalPrice} /> </Route>
         </Switch>
       </BrowserRouter>
     </div>

@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
-function Navbar() {
-  const [open, setOpen] = useState(false);
+function Navbar({open, setOpen}) {
 
   useEffect(() => {
   const root = document.documentElement;

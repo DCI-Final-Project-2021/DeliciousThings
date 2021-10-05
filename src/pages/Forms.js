@@ -105,7 +105,6 @@ function Forms({ cart, totalPrice }) {
         </label>
         <label>
           <input type="submit" value="Submit" />
-          <p>ID: {order.customerId}</p>
         </label>
       </form>
     </div>
