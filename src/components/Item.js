@@ -1,9 +1,18 @@
 import React from "react";
 
-function Item({ item, cart, setCart }) {
+function Item({ item, cart, setCart, totalPrice, setTotalPrice }) {
   const addItemToCart = () => {
-    cart.push(item);
-    setCart(cart);
+    let objIndex = cart.findIndex((obj) => obj.name === item.name);
+
+    if (objIndex === -1) {
+      item.count = 1;
+      setCart([...cart, item]);
+      setTotalPrice(totalPrice + item.price.slice(0, -1) * 1);
+    } else {
+      cart[objIndex].count += 1;
+      const newCart = [...cart];
+      setCart(newCart);
+    }
   };
 
   return (

@@ -1,36 +1,66 @@
 .carts {
     margin: 0 auto;
-    max-width: 90vw;
-    min-height: 75vh;
-    
-    .xyz {
-        display: flex;
-        flex-direction: row;
-
-        div {
-            &:first-child{
-                flex: 2;
+    max-width: 80vw;
+  
+    h4 {
+      color: $first-color;
+      text-align: center;
+      text-transform: capitalize;
+      padding: 25px;
+    }
+  
+    .carts-sub-div {
+      display: flex;
+      flex-direction: row;
+      box-shadow: 0 0 5px $base-color;
+      border-radius: 10px 10px 0 0;
+      padding: 4%;
+      min-height: 80vh;
+      
+      .carts-items {
+        flex: 5;
+        
+  
+        .cart-item {
+          display: flex;
+          align-items: flex-start;
+          min-height: 50px;
+          margin: 5px 0;
+          p {
+            flex: 3;
+            &.gecici {
+              flex: 1; 
             }
-            flex: 1;
+          }
+          button {
+            background-color: $first-color;
+            flex-basis: 30px;
+            padding: 0;
+            margin: 0 5px;
+          }
         }
-    }
-
-    h1 {
-        margin: 20px 0;
-        background-color: $third-color;
-        color: $first-color;
-        text-align: center;
-        text-transform: capitalize;
-        padding: 25px;
-    }
-    
-    .cart-item {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        border: 1px solid;
-        min-height: 100px;
-        margin: 5px 0;
       }
-
-}
+  
+      .summary {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        flex: 2;
+        height: 250px;
+  
+        input {
+          background-color: $base-color;
+          color: $third-color;
+          height: 50px;
+          width: 200px;
+  
+          &:hover {
+              background-color: $first-color;
+              color: $second-color;
+          }
+        }
+      }
+    }
+  }
+  

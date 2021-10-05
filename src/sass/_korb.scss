@@ -18,12 +18,12 @@
         border: 1px solid $first-color;
     }
     
-    button {
+    input {
         height: 50px;
         width: 150px;
         color: $first-color;
         background-color: $second-color;
         text-transform: uppercase;
+        transition: 0.5s ease-in-out;
     }
-    
 }
