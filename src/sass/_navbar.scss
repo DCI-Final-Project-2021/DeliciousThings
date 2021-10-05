@@ -5,25 +5,18 @@ nav {
   align-items: center;
   font-family: inter;
   background-color: $first-color;
-  
+
   .logo {
     margin-left: 5vw;
     font-size: 1.5rem;
     font-weight: 700;
     text-transform: uppercase;
     color: $third-color;
-    
+
     &:hover {
       cursor: pointer;
       color: $second-color;
     }
-  }
-
-  .styledBurger {
-    display: none;
-    width: 2rem;
-    height: 2rem;
-    margin-right: 5vw;
   }
 
   .nav-links {
@@ -46,6 +39,10 @@ nav {
       }
     }
   }
+
+  .styledBurger {
+    display: none;
+  }
 }
 
 @media all and (max-width: 768px) {
@@ -66,12 +63,12 @@ nav {
         display: flex;
         flex-direction: column;
         // background-color: crimson;
-        
+
         a {
           color: $third-color;
           padding: 25px;
           border-bottom: 1px solid $third-color;
-          
+
           &:hover {
             border-bottom: 1px solid $second-color;
           }
@@ -83,6 +80,9 @@ nav {
       display: flex;
       justify-content: space-around;
       flex-flow: column nowrap;
+      width: 2rem;
+      height: 2rem;
+      margin-right: 5vw;
 
       div {
         width: 2rem;
@@ -93,7 +93,7 @@ nav {
         transition: all 0.3s linear;
 
         &.bg-color {
-          background-color: $second-color;
+          background-color: $third-color;
         }
 
         &.rot1 {
