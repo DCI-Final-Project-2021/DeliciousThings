@@ -23,7 +23,7 @@ function Navbar() {
             <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <NavLink to="/korb">Korb</NavLink>
+            <NavLink to="/cart">Cart</NavLink>
           </li>
           <li>
             <NavLink to="/login">Login</NavLink>

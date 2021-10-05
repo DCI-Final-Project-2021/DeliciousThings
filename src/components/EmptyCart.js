@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 
-function LeerKorb() {
+function EmptyCart() {
   let history = useHistory();
 
   const viewHome = () => {
@@ -17,4 +17,4 @@ function LeerKorb() {
   );
 }
 
-export default LeerKorb;
+export default EmptyCart;

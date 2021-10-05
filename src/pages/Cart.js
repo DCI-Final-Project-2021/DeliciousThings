@@ -1,8 +1,8 @@
 import React from "react";
-import Leerkorb from "../components/Leerkorb";
+import EmptyCart from "../components/EmptyCart";
 import { useHistory } from "react-router-dom";
 
-function Korb({ cart, setCart, totalPrice, setTotalPrice }) {
+function Cart({ cart, setCart, totalPrice, setTotalPrice }) {
   let history = useHistory();
   
   const viewForm = () => {
@@ -62,10 +62,10 @@ function Korb({ cart, setCart, totalPrice, setTotalPrice }) {
           </div>
         </div>
       ) : (
-        <Leerkorb />
+        <EmptyCart />
       )}
     </div>
   );
 }
 
-export default Korb;
+export default Cart;

@@ -17,8 +17,16 @@
 
     .items {
         display: flex;
+        align-items: center;
         justify-content: space-evenly;
       }
       
-
 }
+
+@media all and (max-width: 768px) {
+    .category {
+        .items {
+            flex-direction: column;
+        }
+    }
+  }

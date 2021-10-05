@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Korb from './pages/Korb';
+import Cart from './pages/Cart';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import Form from './pages/Forms';
@@ -20,10 +20,8 @@ function App() {
     let total = 0;
     cart.map(item => {
       total += (item.price.slice(0, -1) * 1) * item.count;
-      console.log(total);
       return total
     })
-    console.log("map disi", total);
     return total;
   });
   const url = "http://localhost:2005/orders";
@@ -57,7 +55,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path="/" > <Home products={products} categories={categories} cart={cart} setCart={setCart} totalPrice={totalPrice} setTotalPrice={setTotalPrice} /> </Route>
-          <Route path="/korb"> <Korb cart={cart} setCart={setCart} totalPrice={totalPrice} setTotalPrice={setTotalPrice} /> </Route>
+          <Route path="/cart"> <Cart cart={cart} setCart={setCart} totalPrice={totalPrice} setTotalPrice={setTotalPrice} /> </Route>
           <Route path="/login"> <Login /> </Route>
           <Route path="/form"> <Form cart={cart} totalPrice={totalPrice} /> </Route>
         </Switch>

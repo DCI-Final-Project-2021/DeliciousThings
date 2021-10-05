@@ -13,6 +13,7 @@ function Forms({ cart, totalPrice }) {
   });
   const [order, setOrder] = useState({
     food: [...cart],
+    userId: "",
     customerId: "",
     total: totalPrice,
   });
@@ -21,7 +22,8 @@ function Forms({ cart, totalPrice }) {
 
   const submitForm = () => {
     api.createNewCustomer(customerData).then((result) => {
-      const updatedOrder = { ...order, customerId: result._id };
+      console.log("heheheheheheh", result);
+      const updatedOrder = { ...order, customerId: result._id, userId: result.user };
       setOrder(updatedOrder);
       console.log("Olusturulan yeni kullanici:", updatedOrder);
       api.addOrderToCustomer(updatedOrder).then((result) => {
