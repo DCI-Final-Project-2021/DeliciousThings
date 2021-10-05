@@ -5,76 +5,44 @@ nav {
   align-items: center;
   font-family: inter;
   background-color: $first-color;
-  color: white;
-
-  .styledBurger {
-    width: 2rem;
-    height: 2rem;
-    position: fixed;
-    top: 15px;
-    right: 20px;
-    z-index: 20;
-    display: none;
-
-    @media (max-width: 768px) {
-      display: flex;
-      justify-content: space-around;
-      flex-flow: column nowrap;
-    }
-
-    div {
-      width: 2rem;
-      height: 0.25rem;
-      background-color: white;
-      border-radius: 10px;
-      transform-origin: 1px;
-      transition: all 0.3s linear;
-
-      &.bg-color {
-        background-color: #333;
-      }
-
-      &.rot1 {
-        transform: rotate(45deg);
-      }
-      &.rot2 {
-        transform: translateX(100%);
-        opacity: 0;
-      }
-      &.rot3 {
-        transform: rotate(-45deg);
-      }
-      &.basic {
-        transform: rotate(0);
-        opacity: 1;
-      }
-    }
-  }
-
+  
   .logo {
-    font-size: 22px;
+    margin-left: 5vw;
+    font-size: 1.5rem;
     font-weight: 700;
     text-transform: uppercase;
-    margin: 15px;
+    color: $third-color;
+    
+    &:hover {
+      cursor: pointer;
+      color: $second-color;
+    }
   }
 
-  .burger {
-    font-size: 30px;
+  .styledBurger {
     display: none;
-    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+    margin-right: 5vw;
   }
 
   .nav-links {
     display: flex;
-    justify-content: space-around;
-    width: 15%;
-    a {
-      font-size: 18px;
-      font-weight: normal;
-      cursor: pointer;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
 
-      &:hover {
-        border-bottom: 2px solid orange;
+    li {
+      a {
+        padding: 10px 20px;
+        font-size: 1.1rem;
+        font-weight: normal;
+        cursor: pointer;
+
+        &:hover {
+          color: $second-color;
+          border-bottom: 2px solid $second-color;
+        }
       }
     }
   }
@@ -82,35 +50,65 @@ nav {
 
 @media all and (max-width: 768px) {
   nav {
-    .burger {
-      display: block;
-      margin: 10px;
-    }
-
-    .logo {
-      margin: 10px;
-    }
-
     .nav-links {
       position: absolute;
       display: block;
       top: 10vh;
       left: 0;
       height: 90vh;
-      background: black;
+      background: $first-color;
       padding: 40px;
-      width: 50%;
+      width: 100%;
       transform: translate(0px);
       transition: 0.5s ease-in-out;
 
       li {
-        padding: 25px;
-        border-bottom: 1px solid #ccc;
+        display: flex;
+        flex-direction: column;
+        // background-color: crimson;
+        
+        a {
+          color: $third-color;
+          padding: 25px;
+          border-bottom: 1px solid $third-color;
+          
+          &:hover {
+            border-bottom: 1px solid $second-color;
+          }
+        }
       }
+    }
 
-      a {
-        &:hover {
-          border-bottom: 1px solid orange;
+    .styledBurger {
+      display: flex;
+      justify-content: space-around;
+      flex-flow: column nowrap;
+
+      div {
+        width: 2rem;
+        height: 0.25rem;
+        background-color: $third-color;
+        border-radius: 10px;
+        transform-origin: 1px;
+        transition: all 0.3s linear;
+
+        &.bg-color {
+          background-color: $second-color;
+        }
+
+        &.rot1 {
+          transform: rotate(45deg);
+        }
+        &.rot2 {
+          transform: translateX(100%);
+          opacity: 0;
+        }
+        &.rot3 {
+          transform: rotate(-45deg);
+        }
+        &.basic {
+          transform: rotate(0);
+          opacity: 1;
         }
       }
     }
