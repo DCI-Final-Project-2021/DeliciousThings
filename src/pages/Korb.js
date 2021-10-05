@@ -16,7 +16,7 @@ function Korb({ cart }) {
       ? 
       (
         <div className="carts">
-          <h1>Alisveris Sepeti</h1>
+        <h1>Alisveris Sepeti</h1>
           <div className="xyz">
             <div>
               {cart.map((item) => {
