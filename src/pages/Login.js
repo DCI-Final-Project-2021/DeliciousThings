@@ -1,19 +1,21 @@
-import React from "react";
+import React, {useState} from "react";
 
 function Login() {
+  const [checked, setChecked] = useState(false);
+  const changeFunc = () => {
+    setChecked(!checked);
+  }
   return (
-    <div class="mainLogin">
-      <div class="container">
-        <label for="uname">
+    <div className="mainLogin">
+      <div className="container">
+        <label htmlFor="uname">
           <b>Username</b>
         </label>
-
         <input type="text" placeholder="Enter Username" name="uname" required />
 
-        <label for="psw">
+        <label htmlFor="psw">
           <b>Password</b>
         </label>
-
         <input
           type="password"
           placeholder="Enter Password"
@@ -23,18 +25,18 @@ function Login() {
 
         <button type="submit">Login</button>
 
-        <label>
-          Remember me:
-          <input type="checkbox" checked="checked" name="remember" />
-        </label>
+        <div className="remember">
+          <label>Remember me:</label>
+          <input type="checkbox" defaultChecked={checked} name="remember" onChange={() => changeFunc()} />
+        </div>
       </div>
 
-      <div class="container">
+      {/* <div class="container">
         <button type="button" class="cancelbtn">
           Cancel
-        </button>
-        {/* <span class="psw">Forgot <a href="#">password?</a></span> */}
-      </div>
+        </button> */}
+      {/* <span class="psw">Forgot <a href="#">password?</a></span> */}
+      {/* </div> */}
     </div>
   );
 }

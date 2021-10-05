@@ -1,7 +1,8 @@
 nav {
   display: flex;
   justify-content: space-between;
-  min-height: 10vh;
+  // height: 12vh;
+  min-height: 75px;
   align-items: center;
   font-family: inter;
   background-color: $first-color;
@@ -50,7 +51,7 @@ nav {
     .nav-links {
       position: absolute;
       display: block;
-      top: 10vh;
+      top: 75px;
       left: 0;
       height: 90vh;
       background: $first-color;
