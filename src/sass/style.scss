@@ -31,6 +31,10 @@ li {
   list-style-type: none;
 }
 
+.hide {
+  display: none;
+}
+
 @import "_navbar.scss";
 @import "_category.scss";
 @import "_items.scss";
