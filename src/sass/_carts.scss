@@ -45,10 +45,15 @@
           }
         }
         button {
+          color: $third-color;
           background-color: $first-color;
           flex-basis: 30px;
           padding: 0;
           margin: 0 5px;
+          &:hover {
+            background-color: $second-color;
+            color: $first-color;
+          }
         }
       }
     }
@@ -62,14 +67,14 @@
       height: 250px;
 
       input {
-        background-color: $base-color;
+        background-color: $first-color;
         color: $third-color;
         height: 50px;
         width: 200px;
 
         &:hover {
-          background-color: $first-color;
-          color: $second-color;
+          background-color: $second-color;
+          color: $first-color;
         }
       }
     }
