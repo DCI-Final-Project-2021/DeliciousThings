@@ -1,66 +1,89 @@
 .carts {
-    margin: 0 auto;
-    max-width: 80vw;
-  
-    h4 {
-      color: $first-color;
-      text-align: center;
-      text-transform: capitalize;
-      padding: 25px;
-    }
-  
-    .carts-sub-div {
-      display: flex;
-      flex-direction: row;
-      box-shadow: 0 0 5px $base-color;
-      border-radius: 10px 10px 0 0;
-      padding: 4%;
-      min-height: 80vh;
-      
-      .carts-items {
-        flex: 5;
-        
-  
-        .cart-item {
-          display: flex;
-          align-items: flex-start;
-          min-height: 50px;
-          margin: 5px 0;
-          p {
-            flex: 3;
-            &.gecici {
-              flex: 1; 
-            }
-          }
-          button {
-            background-color: $first-color;
-            flex-basis: 30px;
-            padding: 0;
-            margin: 0 5px;
-          }
+  margin: 0 auto;
+  max-width: 80vw;
+
+  h4 {
+    color: $first-color;
+    text-align: center;
+    text-transform: capitalize;
+    padding: 25px;
+  }
+
+  .carts-sub-div {
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 0 5px $base-color;
+    border-radius: 10px 10px 0 0;
+    padding: 4%;
+    min-height: 80vh;
+
+    .carts-items {
+      flex: 5;
+
+      .cart-header {
+        display: flex;
+        align-items: flex-start;
+        min-height: 50px;
+        margin: 5px 0;
+        p {
+          border-bottom: 1px solid;
+          text-align: center;
+          flex: 3;
+          margin: 1px;
         }
       }
-  
-      .summary {
+
+      .cart-item {
         display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        flex: 2;
-        height: 250px;
-  
-        input {
-          background-color: $base-color;
-          color: $third-color;
-          height: 50px;
-          width: 200px;
-  
-          &:hover {
-              background-color: $first-color;
-              color: $second-color;
+        align-items: flex-start;
+        min-height: 50px;
+        margin: 5px 0;
+        p {
+          flex: 3;
+          &.gecici {
+            flex: 1;
           }
+        }
+        button {
+          background-color: $first-color;
+          flex-basis: 30px;
+          padding: 0;
+          margin: 0 5px;
+        }
+      }
+    }
+
+    .summary {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      flex: 2;
+      height: 250px;
+
+      input {
+        background-color: $base-color;
+        color: $third-color;
+        height: 50px;
+        width: 200px;
+
+        &:hover {
+          background-color: $first-color;
+          color: $second-color;
         }
       }
     }
   }
-  
+}
+
+@media all and (max-width: 768px) {
+  .carts {
+    margin: 1vh auto;
+    max-width: 95vw;
+    min-height: 80vh;
+
+    .carts-sub-div {
+      flex-direction: column-reverse;
+    }
+  }
+}
