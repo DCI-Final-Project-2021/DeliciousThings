@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 
 function Cart({ cart, setCart, totalPrice, setTotalPrice }) {
   let history = useHistory();
-  
+
   const viewForm = () => {
     history.push("/form");
   };
@@ -14,7 +14,7 @@ function Cart({ cart, setCart, totalPrice, setTotalPrice }) {
       cart[i].count -= 1;
       const newCart = [...cart];
       setCart([...newCart]);
-      setTotalPrice(totalPrice - (item.price.slice(0, -1) * 1))
+      setTotalPrice(totalPrice - item.price.slice(0, -1) * 1);
     }
     console.log("azalt fonksiyon", item.name);
   };
@@ -23,8 +23,14 @@ function Cart({ cart, setCart, totalPrice, setTotalPrice }) {
     cart[i].count += 1;
     const newCart = [...cart];
     setCart([...newCart]);
-    setTotalPrice(totalPrice + (item.price.slice(0, -1) * 1))
+    setTotalPrice(totalPrice + item.price.slice(0, -1) * 1);
     console.log("arttir fonksiyon", item.name);
+  };
+
+  const deleteItem = (i) => {
+    cart.splice(i, 1);
+    const newCart = [...cart];
+    setCart([...newCart]);
   };
 
   return (
@@ -34,6 +40,11 @@ function Cart({ cart, setCart, totalPrice, setTotalPrice }) {
           <h4>Alışveriş Sepetiniz</h4>
           <div className="carts-sub-div">
             <div className="carts-items">
+              <div className="cart-header">
+                <p>Item</p>
+                <p>Count</p>
+                <p>Price</p>
+              </div>
               {cart.map((item, i) => {
                 return (
                   <div className="cart-item" key={i}>
@@ -41,9 +52,10 @@ function Cart({ cart, setCart, totalPrice, setTotalPrice }) {
                       {i + 1}. {item.name}
                     </p>
                     <button onClick={() => azalt(item, i)}>-</button>
+                    <p className="gecici">{item.count}</p>
                     <button onClick={() => arttir(item, i)}>+</button>
-                    <p className="gecici">Adet: {item.count}</p>
-                    <p>Fiyat: {item.price.slice(0, -1) * item.count}€</p>
+                    <p>{item.price.slice(0, -1) * item.count}€</p>
+                    <button onClick={() => deleteItem(i)}>X</button>
                   </div>
                 );
               })}
