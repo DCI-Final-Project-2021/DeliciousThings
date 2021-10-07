@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar";
 import './App.css';
 import menu from "./menu.json";
 import api from './api/fetchDataFromDB';
+// import fake from "./faker/fakeOrder.js";
 
 function App() {
   const [cart, setCart] = useState(() => {
@@ -27,6 +28,10 @@ function App() {
   const url = "http://localhost:2005/orders";
   //url degisecek
 
+  // useEffect(() => {
+  //   fake.submitForm();
+  // }, []);
+  
   const [categories, setCategories] = useState([]);
   const [open, setOpen] = useState(false);
   useEffect(() => {

@@ -17,7 +17,8 @@ function Item({ item, cart, setCart, totalPrice, setTotalPrice }) {
 
   return (
     <div>
-      <div className="item">
+      {/* <div className="item" style={{backgroundImage:`url(${item.image})`}}> */}
+      <div className="item" >
         <h6>{item.name}</h6>
         <img src={item.image} alt="resim aciklamasi"></img>
         <button onClick={addItemToCart}>Add to Cart</button>

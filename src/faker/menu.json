@@ -1,0 +1,65 @@
+[
+    {
+        "category": "burger",
+        "name": "Cheeseburger",
+        "description": "mit Salat, Cheddar, frischen Zwiebeln, eingelegten Gurken",
+        "price": "12€",
+        "image": "https://cdn.pixabay.com/photo/2017/09/18/16/53/burger-2762371_960_720.jpg"
+    },
+    {
+        "category": "burger",
+        "name": "Hamburger",
+        "description": "Double Burger (ca. 260g) mit Rucola, Frischen Zwiebeln,",
+        "price": "12€",
+        "image": "https://cdn.pixabay.com/photo/2017/12/09/23/04/bread-3008950_960_720.jpg"
+    },
+    {
+        "category": "burger",
+        "name": "Tripleburger",
+        "description": "mit Salat, Cheddar, gebratenen Zwiebeln, frischen Gurken,",
+        "price": "10€",
+        "image": "https://cdn.pixabay.com/photo/2016/03/26/23/19/hamburger-1281855_960_720.jpg"
+    },
+    {
+        "category": "desert",
+        "name": "Muffin",
+        "description": "Schoko Muffin mit Milka Einzelpack",
+        "price": "8€",
+        "image": "https://cdn.pixabay.com/photo/2019/09/21/13/19/mufiin-4493905_960_720.jpg"
+    },
+    {
+        "category": "desert",
+        "name": "Donut",
+        "description": "Schoko Donut mt Milka Enzelpack",
+        "price": "7€",
+        "image": "https://cdn.pixabay.com/photo/2018/09/16/07/22/donut-3680831_960_720.jpg"
+    },
+    {
+        "category": "desert",
+        "name": "Eis",
+        "description": "zubereitet mit natürlichen Früchten",
+        "price": "5€",
+        "image": "https://cdn.pixabay.com/photo/2017/05/11/19/34/ice-2305159_960_720.jpg"
+    },
+    {
+        "category": "salat",
+        "name": "Caesar",
+        "description": "Salatmix mit Croutons und Parmesan Käse, Tomaten",
+        "price": "6€",
+        "image": "https://cdn.pixabay.com/photo/2021/02/06/15/11/caesar-5988435_960_720.jpg"
+    },
+    {
+        "category": "salat",
+        "name": "Grüner",
+        "description": "Salatmix mit Cherry Tomaten, Gurken, Oliven",
+        "price": "13€",
+        "image": "https://cdn.pixabay.com/photo/2015/05/31/13/59/salad-791891_960_720.jpg"
+    },
+    {
+        "category": "salat",
+        "name": "Peporoni",
+        "description": "Weißkraut und Karotten in einem Salatdressing",
+        "price": "9€",
+        "image": "https://cdn.pixabay.com/photo/2017/05/04/19/33/rice-noodles-2284949_960_720.jpg"
+    }
+]
