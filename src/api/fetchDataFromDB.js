@@ -9,7 +9,6 @@ export default {
     }
   },
   createNewCustomer: async function (customer) {
-    console.log("qwqrqwrqrqr", customer);
     try {
       const url = `http://localhost:2005/customers`;
       const options = {

@@ -47,8 +47,9 @@ const order = {
 };
 
 const submitForm = () => {
+  console.log("submit forma geldi");
   api.createNewCustomer(customerData).then((result) => {
-    console.log("heheheheheheh", result);
+    console.log("res", result);
     const updatedOrder = {
       ...order,
       customerId: result._id,

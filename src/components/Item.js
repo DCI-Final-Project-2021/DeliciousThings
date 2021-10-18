@@ -1,6 +1,12 @@
+// import React, { useState } from "react";
 import React from "react";
 
 function Item({ item, cart, setCart, totalPrice, setTotalPrice }) {
+  // const [inCart, setInCart] = useState(() => {
+  //   cart.filter((e) => e.name === item.name).length > 0 ? true : false;
+  // });
+  // console.log("hier", cart.filter(e => e.name === item.name).length > 0);
+
   const addItemToCart = () => {
     let objIndex = cart.findIndex((obj) => obj.name === item.name);
 
@@ -13,15 +19,24 @@ function Item({ item, cart, setCart, totalPrice, setTotalPrice }) {
       const newCart = [...cart];
       setCart(newCart);
     }
+    // setInCart(true);
   };
 
   return (
-    <div>
+    <div className="item">
       {/* <div className="item" style={{backgroundImage:`url(${item.image})`}}> */}
-      <div className="item" >
+      <img src={item.image} alt="resim aciklamasi"></img>
+      <div className="detail">
         <h6>{item.name}</h6>
-        <img src={item.image} alt="resim aciklamasi"></img>
-        <button onClick={addItemToCart}>Add to Cart</button>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book.
+        </p>
+        <button onClick={addItemToCart}>
+          {false ? "In Cart" : "Add to Cart"}
+        </button>
       </div>
     </div>
   );

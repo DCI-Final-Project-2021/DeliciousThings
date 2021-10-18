@@ -23,7 +23,11 @@ function Forms({ cart, totalPrice }) {
   const submitForm = () => {
     api.createNewCustomer(customerData).then((result) => {
       console.log("heheheheheheh", result);
-      const updatedOrder = { ...order, customerId: result._id, userId: result.user };
+      const updatedOrder = {
+        ...order,
+        customerId: result._id,
+        userId: result.user,
+      };
       setOrder(updatedOrder);
       console.log("Olusturulan yeni kullanici:", updatedOrder);
       api.addOrderToCustomer(updatedOrder).then((result) => {
@@ -38,8 +42,8 @@ function Forms({ cart, totalPrice }) {
     <div>
       <form onSubmit={submitForm}>
         <label>
-          Name:
           <input
+            placeholder="Name"
             type="text"
             name="name"
             value={customerData.name}
@@ -49,8 +53,8 @@ function Forms({ cart, totalPrice }) {
           />
         </label>
         <label>
-          Surname:
           <input
+            placeholder="Surname"
             type="text"
             name="surname"
             value={customerData.surname}
@@ -60,8 +64,8 @@ function Forms({ cart, totalPrice }) {
           />
         </label>
         <label>
-          Email:
           <input
+            placeholder="Email"
             type="email"
             name="email"
             value={customerData.email}
@@ -71,8 +75,8 @@ function Forms({ cart, totalPrice }) {
           />
         </label>
         <label>
-          Telefonnummer:
           <input
+            placeholder="Phone"
             type="text"
             name="telefon"
             value={customerData.tel}
@@ -82,8 +86,8 @@ function Forms({ cart, totalPrice }) {
           />
         </label>
         <label>
-          Adress:
           <input
+            placeholder="Address"
             type="text"
             name="adress"
             value={customerData.address}
@@ -93,8 +97,8 @@ function Forms({ cart, totalPrice }) {
           />
         </label>
         <label>
-          City:
           <input
+            placeholder="City"
             type="text"
             name="city"
             value={customerData.city}

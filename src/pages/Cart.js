@@ -37,7 +37,7 @@ function Cart({ cart, setCart, totalPrice, setTotalPrice }) {
     <div>
       {cart.length > 0 ? (
         <div className="carts">
-          <h4>Alışveriş Sepetiniz</h4>
+          <h4>Your Shopping Cart</h4>
           <div className="carts-sub-div">
             <div className="carts-items">
               <div className="cart-header">
@@ -61,14 +61,14 @@ function Cart({ cart, setCart, totalPrice, setTotalPrice }) {
               })}
             </div>
             <div className="summary">
-              <h6>Siparis özetiniz</h6>
+              <h6>Your order summary</h6>
               <p>
-                Toplam tutar: <span>{totalPrice}€</span>
+                Total price: <span>{totalPrice}€</span>
               </p>
               <input
                 type="submit"
                 onClick={viewForm}
-                value="Sipariş ver"
+                value="Order now"
               ></input>
             </div>
           </div>

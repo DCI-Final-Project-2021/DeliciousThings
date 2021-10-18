@@ -8,7 +8,7 @@ import Navbar from "./components/Navbar";
 import './App.css';
 import menu from "./menu.json";
 import api from './api/fetchDataFromDB';
-// import fake from "./faker/fakeOrder.js";
+import fake from "./faker/fakeOrder.js";
 
 function App() {
   const [cart, setCart] = useState(() => {
@@ -31,6 +31,11 @@ function App() {
   // useEffect(() => {
   //   fake.submitForm();
   // }, []);
+
+  const addNewOrder = () => {
+    console.log("artiya tikladin");
+    fake.submitForm();
+  };
   
   const [categories, setCategories] = useState([]);
   const [open, setOpen] = useState(false);
@@ -57,7 +62,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar open={open} setOpen={setOpen} />
+        <Navbar open={open} setOpen={setOpen} addNewOrder={addNewOrder} />
         <Switch>
           <Route exact path="/"> 
             <Home  products={products} categories={categories} cart={cart} setCart={setCart} totalPrice={totalPrice} setTotalPrice={setTotalPrice} open={open} /> </Route>
