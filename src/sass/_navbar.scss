@@ -22,21 +22,29 @@ nav {
 
   .nav-links {
     display: flex;
+    align-items: center;
     margin: 0 5vw 0 0;
     padding: 0;
     z-index: 1;
 
     li {
-      a {
+      a, i {
         padding: 10px 20px;
-        font-size: 1.1rem;
-        font-weight: normal;
         cursor: pointer;
+        color: $third-color;
 
         &:hover {
           color: $second-color;
           border-bottom: 2px solid $second-color;
         }
+      }
+
+      a {
+        font-size: 20px;
+      }
+
+      i {
+        line-height: 20px;
       }
     }
   }

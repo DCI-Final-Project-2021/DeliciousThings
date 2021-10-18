@@ -10,11 +10,9 @@ function Navbar({ open, setOpen, addNewOrder }) {
 
   // bu useEffect kontrol edilecek
 
-  
-
   return (
     <nav>
-      <div className="logo">Liferando</div>
+      <div className="logo">Delicious Things</div>
       <ul className={open ? "nav-links open" : "nav-links close"}>
         <li>
           <NavLink to="/">Home</NavLink>
@@ -26,9 +24,7 @@ function Navbar({ open, setOpen, addNewOrder }) {
           <NavLink to="/login">Login</NavLink>
         </li> */}
         <li>
-          <a href="">
-            <i className="fas fa-plus" onClick={addNewOrder}></i>
-          </a>
+          <i className="fas fa-plus" onClick={addNewOrder}></i>
         </li>
       </ul>
 

@@ -21,21 +21,21 @@
         "image": "https://cdn.pixabay.com/photo/2016/03/26/23/19/hamburger-1281855_960_720.jpg"
     },
     {
-        "category": "desert",
+        "category": "dessert",
         "name": "Muffin",
         "description": "Schoko Muffin mit Milka Einzelpack",
         "price": "8€",
         "image": "https://cdn.pixabay.com/photo/2019/09/21/13/19/mufiin-4493905_960_720.jpg"
     },
     {
-        "category": "desert",
+        "category": "dessert",
         "name": "Donut",
         "description": "Schoko Donut mt Milka Enzelpack",
         "price": "7€",
         "image": "https://cdn.pixabay.com/photo/2018/09/16/07/22/donut-3680831_960_720.jpg"
     },
     {
-        "category": "desert",
+        "category": "dessert",
         "name": "Eis",
         "description": "zubereitet mit natürlichen Früchten",
         "price": "5€",

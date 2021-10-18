@@ -1,55 +1,93 @@
+// MOBILE
 .carts {
-  margin: 0 auto;
-  max-width: 80vw;
+  // margin: 0 auto;
+  // max-width: 80vw; desktop
 
   h4 {
-    color: $first-color;
+    font-size: 16px;
+    color: $second-color;
     text-align: center;
     text-transform: capitalize;
-    padding: 25px;
+    padding: 10px;
+    margin: 0;
+    border-bottom: 1px solid $second-color;
   }
 
   .carts-sub-div {
     display: flex;
-    flex-direction: row;
-    box-shadow: 0 0 5px $base-color;
-    border-radius: 10px 10px 0 0;
-    padding: 4%;
-    min-height: 80vh;
+    flex-direction: column; //desktop row
+    // box-shadow: 0 0 2px $base-color;
+    // border-radius: 10px 10px 0 0;
+    padding: 1vh;
+    min-height: 75vh;
 
     .carts-items {
-      flex: 5;
+      flex: 8; // 5
+      // order: 1;
 
       .cart-header {
         display: flex;
         align-items: flex-start;
-        min-height: 50px;
+        min-height: 30px;
         margin: 5px 0;
         p {
-          border-bottom: 1px solid;
+          border-bottom: 1px solid black;
           text-align: center;
-          flex: 3;
-          margin: 1px;
+          font-size: 16px;
+          margin: 0;
+          &:first-child {
+            flex: 4;
+          }
+          &:nth-child(2) {
+            flex: 3;
+          }
+          &:nth-child(3) {
+            flex: 1;
+          }
+          &:nth-child(4) {
+            flex: 1;
+            color: #fff;
+          }
         }
       }
 
       .cart-item {
         display: flex;
-        align-items: flex-start;
-        min-height: 50px;
-        margin: 5px 0;
+        height: 25px;
         p {
-          flex: 3;
-          &.gecici {
+          height: 20px;
+          font-size: 12px;
+          &:first-child {
+            flex: 4;
+          }
+          &:nth-child(3) {
+            flex: 1;
+            text-align: center;
+          }
+          &:nth-child(4) {
             flex: 1;
           }
         }
+        .count-item {
+          flex: 3;
+          display: flex;
+          height: 20px;
+          
+          p {
+            flex: 1;
+            text-align: center;
+          }
+          button {
+            flex: 1;
+            font-size: 14px;
+          }
+        }
         button {
+          flex: 1;
           color: $third-color;
           background-color: $first-color;
-          flex-basis: 30px;
-          padding: 0;
-          margin: 0 5px;
+          height: 20px;
+          font-size: 12px;
           &:hover {
             background-color: $second-color;
             color: $first-color;
@@ -59,18 +97,21 @@
     }
 
     .summary {
+      border: 1px solid;
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
+      justify-content: center;
       align-items: center;
-      flex: 2;
-      height: 250px;
+      // flex: 3;
+      width: 70%;
+      margin: 0 auto;
+      height: 200px;
 
       input {
         background-color: $first-color;
         color: $third-color;
-        height: 50px;
-        width: 200px;
+        height: 40px;
+        width: 150px; // 200px
 
         &:hover {
           background-color: $second-color;
@@ -82,13 +123,91 @@
 }
 
 @media all and (max-width: 768px) {
-  .carts {
-    margin: 1vh auto;
-    max-width: 95vw;
-    min-height: 80vh;
+  // .carts {
+  //   margin: 1vh auto;
+  //   max-width: 95vw;
+  //   min-height: 80vh;
 
+  //   .carts-sub-div {
+  //     flex-direction: column-reverse;
+  //   }
+  // }
+}
+
+// TABLET
+@media screen and (min-width: 480px) and (max-width: 959px) {
+  .carts {
+    padding: 5vh;
+    
+    h4 {
+      font-size: 20px;
+    }
+  
     .carts-sub-div {
-      flex-direction: column-reverse;
+      .carts-items {
+        .cart-header {
+          p {
+            
+            &:first-child {
+              flex: 3;
+            }
+            &:nth-child(2) {
+              flex: 1;
+            }
+            &:nth-child(3) {
+              flex: 1;
+            }
+            &:nth-child(4) {
+              flex: 0.25;
+            }
+          }
+        }
+  
+        .cart-item {
+          display: flex;
+          height: 25px;
+          p {
+            height: 20px;
+            font-size: 12px;
+            &:first-child {
+              flex: 3;
+            }
+            &:nth-child(3) {
+              flex: 1;
+              text-align: center;
+            }
+            &:nth-child(4) {
+              flex: 1;
+            }
+          }
+          .count-item {
+            flex: 1;
+            display: flex;
+            height: 20px;
+            
+            p {
+              flex: 2;
+              text-align: center;
+            }
+            button {
+              flex: 1;
+              font-size: 14px;
+            }
+          }
+          button {
+            flex: 0.25;
+          }
+        }
+      }
+  
+      .summary {
+        width: 50%;
+      }
     }
   }
+  
+}
+
+// DESKTOP
+@media screen and (min-width: 960px) {
 }

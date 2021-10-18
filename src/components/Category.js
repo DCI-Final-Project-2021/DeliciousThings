@@ -8,7 +8,18 @@ function Category({ category, cart, setCart, totalPrice, setTotalPrice }) {
       <h1>{category}</h1>
       <div className="items">
         {menu.map((item, i) => {
-          return item.category === category ? <Item key={i} item={item} cart={cart} setCart={setCart} totalPrice={totalPrice} setTotalPrice={setTotalPrice} /> : null;
+          return (
+            item.category === category && (
+              <Item
+                key={i}
+                item={item}
+                cart={cart}
+                setCart={setCart}
+                totalPrice={totalPrice}
+                setTotalPrice={setTotalPrice}
+              />
+            )
+          );
         })}
       </div>
     </div>

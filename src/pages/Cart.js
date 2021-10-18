@@ -1,30 +1,26 @@
 import React from "react";
 import EmptyCart from "../components/EmptyCart";
-import { useHistory } from "react-router-dom";
+import { Redirect } from "react-router";
 
 function Cart({ cart, setCart, totalPrice, setTotalPrice }) {
-  let history = useHistory();
-
   const viewForm = () => {
-    history.push("/form");
+    <Redirect to="/form" />;
   };
 
-  const azalt = (item, i) => {
+  const reduceAmount = (item, i) => {
     if (cart[i].count > 1) {
       cart[i].count -= 1;
       const newCart = [...cart];
       setCart([...newCart]);
       setTotalPrice(totalPrice - item.price.slice(0, -1) * 1);
     }
-    console.log("azalt fonksiyon", item.name);
   };
 
-  const arttir = (item, i) => {
+  const increaseAmount = (item, i) => {
     cart[i].count += 1;
     const newCart = [...cart];
     setCart([...newCart]);
     setTotalPrice(totalPrice + item.price.slice(0, -1) * 1);
-    console.log("arttir fonksiyon", item.name);
   };
 
   const deleteItem = (i) => {
@@ -44,6 +40,7 @@ function Cart({ cart, setCart, totalPrice, setTotalPrice }) {
                 <p>Item</p>
                 <p>Count</p>
                 <p>Price</p>
+                <p>Del</p>
               </div>
               {cart.map((item, i) => {
                 return (
@@ -51,9 +48,11 @@ function Cart({ cart, setCart, totalPrice, setTotalPrice }) {
                     <p>
                       {i + 1}. {item.name}
                     </p>
-                    <button onClick={() => azalt(item, i)}>-</button>
-                    <p className="gecici">{item.count}</p>
-                    <button onClick={() => arttir(item, i)}>+</button>
+                    <div className="count-item">
+                      <button onClick={() => reduceAmount(item, i)}>-</button>
+                      <p>{item.count}</p>
+                      <button onClick={() => increaseAmount(item, i)}>+</button>
+                    </div>
                     <p>{item.price.slice(0, -1) * item.count}€</p>
                     <button onClick={() => deleteItem(i)}>X</button>
                   </div>
@@ -65,11 +64,7 @@ function Cart({ cart, setCart, totalPrice, setTotalPrice }) {
               <p>
                 Total price: <span>{totalPrice}€</span>
               </p>
-              <input
-                type="submit"
-                onClick={viewForm}
-                value="Order now"
-              ></input>
+              <input type="submit" onClick={viewForm} value="Order now"></input>
             </div>
           </div>
         </div>

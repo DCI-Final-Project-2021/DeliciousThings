@@ -1,39 +1,31 @@
+// MOBILE
 .category {
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
-    margin: 0 auto;
-    // max-width: 90vw;
-    min-height: 75vh;
+  max-width: 1040px;
+  margin: 1vh auto;
+  min-height: 75vh;
 
-    h1 {
-        position: relative;
-        left: 0vw;
-        margin: 10px 0;
-        width: 100vw;
-        border-bottom: 1px solid $third-color;
-        // box-shadow: 1px 2px 1px $third-color;
-        color: $second-color;
-        text-align: left;
-        text-transform: uppercase;
-        padding: 25px 0;
-        font-size: 3rem;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-    }
+  h1 {
+    margin: 1vh 0 0 0;
+    border-bottom: 1px solid $third-color;
+    color: $second-color;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
 
-    .items {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-evenly;
-      }
-      
+  .items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center; // mobile icin olacak sadece
+  }
 }
 
-@media all and (max-width: 768px) {
-    .category {
-        .items {
-            flex-direction: column;
-        }
-    }
-  }
+// TABLET
+@media screen and (min-width: 480px) and (max-width: 959px) {
+}
+
+// DESKTOP
+@media screen and (min-width: 960px) {
+}

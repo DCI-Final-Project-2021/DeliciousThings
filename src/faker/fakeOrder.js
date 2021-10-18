@@ -30,23 +30,23 @@ const totalPrice = (carts) => {
   return total;
 };
 
-const customerData = {
-  name: faker.name.firstName(),
-  surname: faker.name.lastName(),
-  email: faker.internet.email(),
-  tel: "12341234",
-  address: faker.address.streetAddress(),
-  city: faker.address.city(),
-};
-
-const order = {
-  food: cartFunction(),
-  userId: "",
-  customerId: "",
-  total: totalPrice(cart),
-};
-
 const submitForm = () => {
+  const customerData = {
+    name: faker.name.firstName(),
+    surname: faker.name.lastName(),
+    email: faker.internet.email(),
+    tel: "12341234",
+    address: faker.address.streetAddress(),
+    city: faker.address.city(),
+  };
+
+  const order = {
+    food: cartFunction(),
+    userId: "",
+    customerId: "",
+    total: totalPrice(cart),
+  };
+  
   console.log("submit forma geldi");
   api.createNewCustomer(customerData).then((result) => {
     console.log("res", result);
