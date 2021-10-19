@@ -1,8 +1,5 @@
 // MOBILE
 .carts {
-  // margin: 0 auto;
-  // max-width: 80vw; desktop
-
   h4 {
     font-size: 16px;
     color: $second-color;
@@ -15,36 +12,42 @@
 
   .carts-sub-div {
     display: flex;
-    flex-direction: column; //desktop row
+    flex-direction: column;
     // box-shadow: 0 0 2px $base-color;
     // border-radius: 10px 10px 0 0;
     padding: 1vh;
-    min-height: 75vh;
+    min-height: 50vh;
 
     .carts-items {
-      flex: 8; // 5
+      flex: 1; // burasi summary kisminin bölümü icin
       // order: 1;
 
       .cart-header {
+        // background-color: wheat;
         display: flex;
-        align-items: flex-start;
+        align-items: flex-end;
         min-height: 30px;
         margin: 5px 0;
+
         p {
           border-bottom: 1px solid black;
           text-align: center;
-          font-size: 16px;
+          font-size: 14px;
           margin: 0;
           &:first-child {
+            // background-color: red;
             flex: 4;
           }
           &:nth-child(2) {
+            // background-color: yellow;
             flex: 3;
           }
           &:nth-child(3) {
+            // background-color: red;
             flex: 1;
           }
           &:nth-child(4) {
+            // background-color: yellow;
             flex: 1;
             color: #fff;
           }
@@ -53,10 +56,15 @@
 
       .cart-item {
         display: flex;
-        height: 25px;
+        align-items: center;
+        min-height: 30px;
+        margin: 1vh 0;
+        // background-color: salmon;
         p {
-          height: 20px;
+          // background-color: saddlebrown;
           font-size: 12px;
+          line-height: 30px;
+          margin: 0;
           &:first-child {
             flex: 4;
           }
@@ -71,22 +79,28 @@
         .count-item {
           flex: 3;
           display: flex;
-          height: 20px;
-          
+          height: 30px;
+          align-items: center;
+
           p {
-            flex: 1;
+            flex: 5;
             text-align: center;
+            line-height: 30px;
           }
           button {
-            flex: 1;
+            width: 30px;
+            height: 30px;
+            flex: 2;
             font-size: 14px;
+            margin: 0 5px;
           }
         }
         button {
           flex: 1;
           color: $third-color;
           background-color: $first-color;
-          height: 20px;
+          height: 30px;
+          width: 30px;
           font-size: 12px;
           &:hover {
             background-color: $second-color;
@@ -102,10 +116,9 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      // flex: 3;
       width: 70%;
-      margin: 0 auto;
-      height: 200px;
+      margin: 2vh auto;
+      flex-basis: 200px;
 
       input {
         background-color: $first-color;
@@ -122,32 +135,21 @@
   }
 }
 
-@media all and (max-width: 768px) {
-  // .carts {
-  //   margin: 1vh auto;
-  //   max-width: 95vw;
-  //   min-height: 80vh;
-
-  //   .carts-sub-div {
-  //     flex-direction: column-reverse;
-  //   }
-  // }
-}
-
 // TABLET
 @media screen and (min-width: 480px) and (max-width: 959px) {
   .carts {
     padding: 5vh;
-    
+
     h4 {
-      font-size: 20px;
+      font-size: 24px;
+      border: none;
     }
-  
+
     .carts-sub-div {
       .carts-items {
         .cart-header {
           p {
-            
+            font-size: 16px;
             &:first-child {
               flex: 3;
             }
@@ -162,19 +164,15 @@
             }
           }
         }
-  
+
         .cart-item {
-          display: flex;
-          height: 25px;
           p {
-            height: 20px;
-            font-size: 12px;
+            font-size: 16px;
             &:first-child {
               flex: 3;
             }
             &:nth-child(3) {
               flex: 1;
-              text-align: center;
             }
             &:nth-child(4) {
               flex: 1;
@@ -183,11 +181,8 @@
           .count-item {
             flex: 1;
             display: flex;
-            height: 20px;
-            
             p {
               flex: 2;
-              text-align: center;
             }
             button {
               flex: 1;
@@ -199,15 +194,90 @@
           }
         }
       }
-  
+
       .summary {
         width: 50%;
       }
     }
   }
-  
 }
 
 // DESKTOP
 @media screen and (min-width: 960px) {
+  .carts {
+    max-width: 85vw;
+    margin: 0 auto;
+    padding: 5vh;
+
+    h4 {
+      font-size: 24px;
+      border: none;
+    }
+
+    .carts-sub-div {
+      flex-direction: row;
+      justify-content: center;
+
+      .carts-items {
+        max-width: 600px;
+        .cart-header {
+          p {
+            font-size: 16px;
+            &:first-child {
+              flex: 3;
+            }
+            &:nth-child(2) {
+              flex: 1;
+            }
+            &:nth-child(3) {
+              flex: 1;
+            }
+            &:nth-child(4) {
+              flex: 0.25;
+            }
+          }
+        }
+
+        .cart-item {
+          p {
+            font-size: 16px;
+            &:first-child {
+              flex: 3;
+            }
+            &:nth-child(3) {
+              flex: 1;
+            }
+            &:nth-child(4) {
+              flex: 1;
+            }
+          }
+          .count-item {
+            flex: 1;
+            display: flex;
+            p {
+              flex: 2;
+            }
+            button {
+              flex: 1;
+              font-size: 14px;
+            }
+          }
+          button {
+            flex: 0.25;
+          }
+        }
+      }
+
+      .summary {
+        max-width: 200px;
+        max-height: 300px;
+        margin: 5px 5px 5px 15px;
+        border: 1px solid;
+
+        input {
+          max-width: 120px;
+        }
+      }
+    }
+  }
 }

@@ -17,10 +17,10 @@ function Navbar({ open, setOpen, addNewOrder }) {
       <div className="logo">Delicious Things</div>
       <ul className={open ? "nav-links open" : "nav-links close"}>
         <li>
-          <NavLink to="/" onClick={toggleOpen}>Home</NavLink>
+          <NavLink to="/" onClick={() => {setOpen(false)}}>Home</NavLink>
         </li>
         <li>
-          <NavLink to="/cart" onClick={toggleOpen}>Cart</NavLink>
+          <NavLink to="/cart" onClick={() => {setOpen(false)}}>Cart</NavLink>
         </li>
         {/* <li>
           <NavLink to="/login">Login</NavLink>

@@ -1,16 +1,12 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import api from "../api/fetchDataFromDB";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Forms({ cart, totalPrice }) {
-  const [customerData, setCustomerData] = useState({
-    name: "",
-    surname: "",
-    email: "",
-    tel: "",
-    address: "",
-    city: "",
-  });
+  const INITIAL_USER = { name: "", surname: "", email: "", tel: "", address: "", city: ""};
+  const [customerData, setCustomerData] = useState(INITIAL_USER);
   const [order, setOrder] = useState({
     food: [...cart],
     userId: "",
@@ -20,25 +16,39 @@ function Forms({ cart, totalPrice }) {
 
   let history = useHistory();
 
-  const submitForm = () => {
-    api.createNewCustomer(customerData).then((result) => {
-      console.log("heheheheheheh", result);
-      const updatedOrder = {
-        ...order,
-        customerId: result._id,
-        userId: result.user,
-      };
-      setOrder(updatedOrder);
-      console.log("Olusturulan yeni kullanici:", updatedOrder);
-      api.addOrderToCustomer(updatedOrder).then((result) => {
-        console.log("Customer a siparis eklenmis mi:", result);
+  const submitForm = (e) => {
+    e.preventDefault();
+    const isFieldsMissing = Object.keys(INITIAL_USER).some(
+      (key) => customerData[key] === ""
+    );
+    console.log("giwe," , isFieldsMissing);
+    if (isFieldsMissing) {
+      toast.error(" All fields are required...");
+      return;
+    }
+
+    try {
+      api.createNewCustomer(customerData).then((result) => {
+        const updatedOrder = {
+          ...order,
+          customerId: result._id,
+          userId: result.user,
+        };
+        setOrder(updatedOrder);
+        console.log("Olusturulan yeni kullanici:", updatedOrder);
+        api.addOrderToCustomer(updatedOrder).then((result) => {
+          console.log("Customer a siparis eklenmis mi:", result);
+        });
       });
-    });
+    } catch (err) {
+      console.log({ err });
+    }
 
     history.push("/");
   };
 
   return (
+    <div>
       <form onSubmit={submitForm}>
         <img src="./images/fill_form.png" alt="fill_form"></img>
         <label>
@@ -111,6 +121,19 @@ function Forms({ cart, totalPrice }) {
           <input type="submit" value="Submit" />
         </label>
       </form>
+      <ToastContainer
+        theme="colored"
+        position="top-center"
+        autoClose={2000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+    </div>
   );
 }
 
