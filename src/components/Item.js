@@ -1,11 +1,10 @@
-// import React, { useState } from "react";
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 function Item({ item, cart, setCart, totalPrice, setTotalPrice }) {
-  // const [inCart, setInCart] = useState(() => {
-  //   cart.filter((e) => e.name === item.name).length > 0 ? true : false;
-  // });
-  // console.log("hier", cart.filter(e => e.name === item.name).length > 0);
+  let history = useHistory();
+
+  const inCart = cart.find((e) => e.name === item.name) ? true : false;
 
   const addItemToCart = () => {
     let objIndex = cart.findIndex((obj) => obj.name === item.name);
@@ -20,9 +19,11 @@ function Item({ item, cart, setCart, totalPrice, setTotalPrice }) {
       setCart(newCart);
       setTotalPrice(totalPrice + item.price.slice(0, -1) * 1);
     }
-    // setInCart(true);
   };
 
+  const redirectToCart = () => {
+    history.push("/cart");
+  };
   return (
     <div className="item">
       <img src={item.image} alt="resim aciklamasi"></img>
@@ -34,9 +35,11 @@ function Item({ item, cart, setCart, totalPrice, setTotalPrice }) {
           since the 1500s, when an unknown printer took a galley of type and
           scrambled it to make a type specimen book.
         </p>
-        <button onClick={addItemToCart}>
-          {false ? "In Cart" : "Add to Cart"}
-        </button>
+        {inCart ? (
+          <button onClick={redirectToCart}>Go to Cart</button>
+        ) : (
+          <button onClick={addItemToCart}>Add to Cart</button>
+        )}
       </div>
     </div>
   );

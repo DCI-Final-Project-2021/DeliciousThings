@@ -32,15 +32,16 @@ li {
 nav {
   display: flex;
   justify-content: space-between;
-  min-height: 75px;
+  min-height: 10vh;
   align-items: center;
   font-family: inter;
   background-color: #092327;
 }
 nav .logo {
+  margin: 0;
   margin-left: 5vw;
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 28px;
+  font-weight: 900;
   text-transform: uppercase;
   color: #CDD7D6;
 }
@@ -55,12 +56,14 @@ nav .nav-links {
   padding: 0;
   z-index: 1;
 }
-nav .nav-links li a, nav .nav-links li i {
+nav .nav-links li a,
+nav .nav-links li i {
   padding: 10px 20px;
   cursor: pointer;
   color: #CDD7D6;
 }
-nav .nav-links li a:hover, nav .nav-links li i:hover {
+nav .nav-links li a:hover,
+nav .nav-links li i:hover {
   color: #F87060;
   border-bottom: 2px solid #F87060;
 }
@@ -68,13 +71,16 @@ nav .nav-links li a {
   font-size: 20px;
 }
 nav .nav-links li i {
-  line-height: 20px;
+  height: 40px;
 }
 nav .styledBurger {
   display: none;
 }
 
 @media all and (max-width: 768px) {
+  nav .logo {
+    font-size: 20px;
+  }
   nav .nav-links {
     position: absolute;
     display: block;
@@ -97,13 +103,19 @@ nav .styledBurger {
     display: flex;
     flex-direction: column;
   }
-  nav .nav-links li a, nav .nav-links li i {
+  nav .nav-links li a,
+nav .nav-links li i {
     color: #CDD7D6;
     padding: 25px;
     border-bottom: 1px solid #CDD7D6;
   }
-  nav .nav-links li a:hover, nav .nav-links li i:hover {
+  nav .nav-links li a:hover,
+nav .nav-links li i:hover {
     border-bottom: 1px solid #F87060;
+  }
+  nav .nav-links li i {
+    line-height: 30px;
+    height: 80px;
   }
   nav .styledBurger {
     display: flex;

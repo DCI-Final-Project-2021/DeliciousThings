@@ -1,16 +1,16 @@
 nav {
   display: flex;
   justify-content: space-between;
-  // height: 12vh;
-  min-height: 75px;
+  min-height: 10vh;
   align-items: center;
   font-family: inter;
   background-color: $first-color;
 
   .logo {
+    margin: 0;
     margin-left: 5vw;
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 28px;
+    font-weight: 900;
     text-transform: uppercase;
     color: $third-color;
 
@@ -28,7 +28,8 @@ nav {
     z-index: 1;
 
     li {
-      a, i {
+      a,
+      i {
         padding: 10px 20px;
         cursor: pointer;
         color: $third-color;
@@ -42,9 +43,8 @@ nav {
       a {
         font-size: 20px;
       }
-
       i {
-        line-height: 20px;
+        height: 40px;
       }
     }
   }
@@ -56,6 +56,9 @@ nav {
 
 @media all and (max-width: 768px) {
   nav {
+    .logo {
+      font-size: 20px;
+    }
     .nav-links {
       position: absolute;
       display: block;
@@ -68,10 +71,10 @@ nav {
       transform: translate(0px);
       transition: 0.5s ease-in-out;
 
-      &.open{
+      &.open {
         transform: translateX(0px);
       }
-      &.close{
+      &.close {
         transform: translateX(-100%);
       }
 
@@ -80,7 +83,8 @@ nav {
         flex-direction: column;
         // background-color: crimson;
 
-        a, i {
+        a,
+        i {
           color: $third-color;
           padding: 25px;
           border-bottom: 1px solid $third-color;
@@ -88,6 +92,10 @@ nav {
           &:hover {
             border-bottom: 1px solid $second-color;
           }
+        }
+        i {
+          line-height: 30px;
+          height: 80px;
         }
       }
     }

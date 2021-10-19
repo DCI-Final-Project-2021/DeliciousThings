@@ -1,20 +1,25 @@
 import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function Navbar({ open, setOpen, addNewOrder }) {
+  let history = useHistory();
   useEffect(() => {
     const root = document.documentElement;
     root.style.setProperty("--open", !open);
   }, [open]);
 
-  // bu useEffect kontrol edilecek
 
   const toggleOpen = () => {
     setOpen(!open);
   }
+  const viewHome = () => {
+    history.push("/");
+  };
+
   return (
     <nav>
-      <div className="logo">Delicious Things</div>
+      <h2 className="logo" onClick={viewHome}>Delicious Things</h2>
       <ul className={open ? "nav-links open" : "nav-links close"}>
         <li>
           <NavLink to="/" onClick={() => {setOpen(false)}}>Home</NavLink>
