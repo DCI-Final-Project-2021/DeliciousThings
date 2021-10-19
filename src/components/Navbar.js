@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
-// import fake from "../faker/fakeOrder.js";
 
 function Navbar({ open, setOpen, addNewOrder }) {
   useEffect(() => {
@@ -10,15 +9,18 @@ function Navbar({ open, setOpen, addNewOrder }) {
 
   // bu useEffect kontrol edilecek
 
+  const toggleOpen = () => {
+    setOpen(!open);
+  }
   return (
     <nav>
       <div className="logo">Delicious Things</div>
       <ul className={open ? "nav-links open" : "nav-links close"}>
         <li>
-          <NavLink to="/">Home</NavLink>
+          <NavLink to="/" onClick={toggleOpen}>Home</NavLink>
         </li>
         <li>
-          <NavLink to="/cart">Cart</NavLink>
+          <NavLink to="/cart" onClick={toggleOpen}>Cart</NavLink>
         </li>
         {/* <li>
           <NavLink to="/login">Login</NavLink>
@@ -28,7 +30,7 @@ function Navbar({ open, setOpen, addNewOrder }) {
         </li>
       </ul>
 
-      <div className="styledBurger" onClick={() => setOpen(!open)}>
+      <div className="styledBurger" onClick={toggleOpen}>
         <div className={open ? "rot1 bg-color" : "basic"} />
         <div className={open ? "rot2 bg-color" : "basic"} />
         <div className={open ? "rot3 bg-color" : "basic"} />

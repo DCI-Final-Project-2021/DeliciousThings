@@ -1,13 +1,11 @@
 import React from "react";
 import EmptyCart from "../components/EmptyCart";
-import { Redirect } from "react-router";
 import { useHistory } from "react-router-dom";
 
 function Cart({ cart, setCart, totalPrice, setTotalPrice }) {
   let history = useHistory();
   const viewForm = () => {
     history.push("/form");
-    // <Redirect to="/form" />;
   };
 
   const reduceAmount = (item, i) => {
