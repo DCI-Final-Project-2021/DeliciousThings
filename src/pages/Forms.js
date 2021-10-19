@@ -39,8 +39,8 @@ function Forms({ cart, totalPrice }) {
   };
 
   return (
-    <div>
       <form onSubmit={submitForm}>
+        <img src="./images/fill_form.png" alt="fill_form"></img>
         <label>
           <input
             placeholder="Name"
@@ -111,7 +111,6 @@ function Forms({ cart, totalPrice }) {
           <input type="submit" value="Submit" />
         </label>
       </form>
-    </div>
   );
 }
 

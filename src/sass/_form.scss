@@ -1,10 +1,11 @@
-// $base-color: #0B5351;
-// $first-color: #092327;
-// $second-color: #F87060;
-// $third-color: #CDD7D6;
-// $text-color: #B3A394;
-
+// MOBILE
 form {
+  img {
+    display: block;
+    margin: 20px auto;
+    width: 200px;
+    height: 200px;
+  }
   max-width: 600px;
   min-height: 90vh;
   display: flex;
@@ -31,7 +32,7 @@ form {
       border: 1px solid $third-color;
 
       &:focus {
-          border: 2px solid $second-color;
+        border: 2px solid $second-color;
       }
       &[type="submit"] {
         width: 50%;
