@@ -18,6 +18,7 @@ function Item({ item, cart, setCart, totalPrice, setTotalPrice }) {
       cart[objIndex].count += 1;
       const newCart = [...cart];
       setCart(newCart);
+      setTotalPrice(totalPrice + item.price.slice(0, -1) * 1);
     }
     // setInCart(true);
   };

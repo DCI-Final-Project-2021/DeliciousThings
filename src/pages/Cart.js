@@ -24,10 +24,11 @@ function Cart({ cart, setCart, totalPrice, setTotalPrice }) {
     setTotalPrice(totalPrice + item.price.slice(0, -1) * 1);
   };
 
-  const deleteItem = (i) => {
+  const deleteItem = (item, i) => {
     cart.splice(i, 1);
     const newCart = [...cart];
     setCart([...newCart]);
+    setTotalPrice(totalPrice - item.price.slice(0, -1) * item.count);
   };
 
   return (
@@ -55,7 +56,7 @@ function Cart({ cart, setCart, totalPrice, setTotalPrice }) {
                       <button onClick={() => increaseAmount(item, i)}>+</button>
                     </div>
                     <p>{item.price.slice(0, -1) * item.count}€</p>
-                    <button onClick={() => deleteItem(i)}>X</button>
+                    <button onClick={() => deleteItem(item, i)}>X</button>
                   </div>
                 );
               })}

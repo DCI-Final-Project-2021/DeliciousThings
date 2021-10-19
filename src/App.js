@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Cart from './pages/Cart';
-import Login from './pages/Login';
-import Home from './pages/Home';
-import Form from './pages/Forms';
+import Cart from "./pages/Cart";
+import Login from "./pages/Login";
+import Home from "./pages/Home";
+import Form from "./pages/Forms";
 import Navbar from "./components/Navbar";
-import './App.css';
+import "./App.css";
 import menu from "./menu.json";
-import api from './api/fetchDataFromDB';
+import api from "./api/fetchDataFromDB";
 import fake from "./faker/fakeOrder.js";
 
 function App() {
@@ -19,40 +19,33 @@ function App() {
   const [products, setProducts] = useState([]);
   const [totalPrice, setTotalPrice] = useState(() => {
     let total = 0;
-    cart.map(item => {
-      total += (item.price.slice(0, -1) * 1) * item.count;
-      return total
-    })
-    return total;
+    if (cart.length < 1) return 0;
+
+    cart.map((item) => {
+      total += item.price.slice(0, -1) * 1 * item.count;
+      return total;
+    });
   });
   const url = "http://localhost:2005/orders";
   //url degisecek
 
-  // useEffect(() => {
-  //   fake.submitForm();
-  // }, []);
-
   const addNewOrder = () => {
-    console.log("artiya tikladin");
     fake.submitForm();
   };
-  
+
   const [categories, setCategories] = useState([]);
   const [open, setOpen] = useState(false);
   useEffect(() => {
     menu.map((item) => {
-      return (
-        !categories.includes(item.category)
+      return !categories.includes(item.category)
         ? categories.push(item.category)
-        : null
-        )
+        : null;
     });
     setCategories(categories);
   }, []);
 
   useEffect(() => {
-    api.fetchDataFromDataBase(url)
-      .then(abc => setProducts(abc));
+    api.fetchDataFromDataBase(url).then((abc) => setProducts(abc));
   }, [url]);
 
   useEffect(() => {
@@ -64,14 +57,18 @@ function App() {
       <BrowserRouter>
         <Navbar open={open} setOpen={setOpen} addNewOrder={addNewOrder} />
         <Switch>
-          <Route exact path="/"> 
-            <Home  products={products} categories={categories} cart={cart} setCart={setCart} totalPrice={totalPrice} setTotalPrice={setTotalPrice} open={open} /> </Route>
-          <Route path="/cart"> 
-            <Cart cart={cart} setCart={setCart} totalPrice={totalPrice} setTotalPrice={setTotalPrice} /> </Route>
-          <Route path="/login"> 
-            <Login /> </Route>
-          <Route path="/form"> 
-            <Form cart={cart} totalPrice={totalPrice} /> </Route>
+          <Route exact path="/">
+            <Home products={products} categories={categories} cart={cart} setCart={setCart} totalPrice={totalPrice} setTotalPrice={setTotalPrice} open={open} />
+          </Route>
+          <Route path="/cart">
+            <Cart cart={cart} setCart={setCart} totalPrice={totalPrice} setTotalPrice={setTotalPrice} />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/form">
+            <Form cart={cart} totalPrice={totalPrice} />
+          </Route>
         </Switch>
       </BrowserRouter>
     </div>
