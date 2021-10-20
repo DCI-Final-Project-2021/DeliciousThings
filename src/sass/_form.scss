@@ -1,22 +1,26 @@
 // MOBILE
 form {
-  img {
-    display: block;
-    margin: 20px auto;
-    width: auto;
-    height: 200px;
-  }
   max-width: 600px;
   min-height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   justify-content: center;
-  margin: 5% auto;
+  margin: 5vh auto;
   padding: 5% 0;
   border: 3px solid $base-color;
   border-radius: 10px;
-
+  
+  img {
+    display: block;
+    margin: 20px auto;
+    width: auto;
+    height: 200px;
+  }
+  h5{
+    color: $second-color;
+    text-align: center;
+  }
   label {
     display: flex;
     flex-direction: column;
@@ -30,6 +34,7 @@ form {
       display: block;
       padding: 5px;
       border: 1px solid $third-color;
+      border-radius: 5px;
 
       &:focus {
         border: 2px solid $second-color;
@@ -52,7 +57,7 @@ form {
 
 @media all and (max-width: 768px) {
   form {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     border: none;
   }

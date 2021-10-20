@@ -51,6 +51,7 @@ function Forms({ cart, totalPrice }) {
     <div>
       <form onSubmit={submitForm}>
         <img src="./images/fill_form.png" alt="fill_form"></img>
+        <h5>Fill out the form to complete the order.</h5>
         <label>
           <input
             placeholder="Name"

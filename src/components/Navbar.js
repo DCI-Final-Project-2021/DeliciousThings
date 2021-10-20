@@ -24,6 +24,9 @@ function Navbar({ open, setOpen, addNewOrder }) {
         <li>
           <NavLink to="/" onClick={() => {setOpen(false)}}>Home</NavLink>
         </li>
+        {/* <li>
+          <NavLink to="/" onClick={() => {setOpen(false)}}>Categories</NavLink>
+        </li> */}
         <li>
           <NavLink to="/cart" onClick={() => {setOpen(false)}}>Cart</NavLink>
         </li>

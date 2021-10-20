@@ -9,16 +9,37 @@
     {
         "category": "burger",
         "name": "Hamburger",
-        "description": "Double Burger (ca. 260g) mit Rucola, Frischen Zwiebeln,",
+        "description": "Double Burger (ca. 260g) mit Rucola, Frischen Zwiebeln",
         "price": "12€",
         "image": "https://cdn.pixabay.com/photo/2017/12/09/23/04/bread-3008950_960_720.jpg"
     },
     {
         "category": "burger",
         "name": "Tripleburger",
-        "description": "mit Salat, Cheddar, gebratenen Zwiebeln, frischen Gurken,",
+        "description": "mit Salat, Cheddar, gebratenen Zwiebeln, frischen Gurken",
         "price": "10€",
         "image": "https://cdn.pixabay.com/photo/2016/03/26/23/19/hamburger-1281855_960_720.jpg"
+    },
+    {
+        "category": "burger",
+        "name": "Beef Bacon",
+        "description": "Beef Patty, Cheddar Cheese, Grilled Onions & Tomatoes, Pickles, Lettuce, Katchup, Mayo, Mustard",
+        "price": "11€",
+        "image": "https://cdn.pixabay.com/photo/2019/08/09/08/14/steak-4394612_960_720.jpg"
+    },
+    {
+        "category": "burger",
+        "name": "Crispy Chicken",
+        "description": "Crispy Chicken, Cheddar Cheese, Grilled Onion & Tomatoes, Lettuce, Pickles, Garlic Souce, Mayo, Chipotle Sauce",
+        "price": "9€",
+        "image": "https://cdn.pixabay.com/photo/2021/08/16/15/11/fried-chicken-6550529_960_720.jpg"
+    },
+    {
+        "category": "burger",
+        "name": "Lazeezo",
+        "description": "Double Beef Patty, HashBrown, Double Cheese, Grilled Onion & Tomatoes, Pickles, Lettuce, Mayo, Katchup, Mustard, Chipotle Sauce",
+        "price": "15€",
+        "image": "https://cdn.pixabay.com/photo/2016/11/19/12/44/burgers-1839090_960_720.jpg"
     },
     {
         "category": "dessert",
@@ -42,6 +63,27 @@
         "image": "https://cdn.pixabay.com/photo/2017/05/11/19/34/ice-2305159_960_720.jpg"
     },
     {
+        "category": "dessert",
+        "name": "Brownies",
+        "description": "A chocolate brownie or simply a brownie is a square or rectangular chocolate baked confection. Brownies come in a variety of forms and may be either fudgy or cakey, depending on their density.",
+        "price": "7€",
+        "image": "https://cdn.pixabay.com/photo/2017/08/07/12/49/dessert-2603520_960_720.jpg"
+    },
+    {
+        "category": "dessert",
+        "name": "Cherry Pie",
+        "description": "Cherry pie is a pie baked with a cherry filling. Traditionally, cherry pie is made with sour cherries rather than sweet cherries.",
+        "price": "6€",
+        "image": "https://cdn.pixabay.com/photo/2017/07/30/13/53/tart-2554401_960_720.jpg"
+    },
+    {
+        "category": "dessert",
+        "name": "Cookie",
+        "description": "A cookie is a baked or cooked snack or dessert that is typically small, flat and sweet. It usually contains flour, sugar, egg, and some type of oil, fat, or butter.",
+        "price": "4€",
+        "image": "https://cdn.pixabay.com/photo/2016/05/12/13/35/cookies-1387826_960_720.jpg"
+    },
+    {
         "category": "salat",
         "name": "Caesar",
         "description": "Salatmix mit Croutons und Parmesan Käse, Tomaten",
@@ -61,5 +103,26 @@
         "description": "Weißkraut und Karotten in einem Salatdressing",
         "price": "9€",
         "image": "https://cdn.pixabay.com/photo/2017/05/04/19/33/rice-noodles-2284949_960_720.jpg"
+    },
+    {
+        "category": "salat",
+        "name": "Broccoli Salad",
+        "description": "You won’t miss the bacon in this lightened-up take on classic broccoli salad. Smoky roasted nuts take its place, adding delectable savory bites. A lightly creamy, sweet & tangy dressing takes the whole thing over the top.",
+        "price": "6€",
+        "image": "https://cdn.pixabay.com/photo/2016/06/10/08/05/food-1447631_960_720.jpg"
+    },
+    {
+        "category": "salat",
+        "name": "Brussels Sprout Salad",
+        "description": "Made with just 7 ingredients, it’s a breeze to put together, but a bright lemon dressing, Parmesan cheese, pine nuts, and dried cranberries make it zippy, fresh, and satisfying.",
+        "price": "9€",
+        "image": "https://cdn.pixabay.com/photo/2017/01/19/15/48/soup-1992656__340.jpg"
+    },
+    {
+        "category": "salat",
+        "name": "Easy Pasta Salad",
+        "description": "As its name suggests, this one is a breeze to make. Just whisk together the zippy lemon dressing at the bottom of a big bowl, add the other ingredients, and toss to create a heavenly tangy/creamy/crunchy/fresh summer combo.",
+        "price": "4€",
+        "image": "https://cdn.pixabay.com/photo/2020/06/17/10/20/salad-5308953__340.jpg"
     }
 ]

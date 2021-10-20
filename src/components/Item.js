@@ -30,16 +30,19 @@ function Item({ item, cart, setCart, totalPrice, setTotalPrice }) {
       <div className="detail">
         <h6>{item.name}</h6>
         <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book.
+          {item.description}
+          {/* Lorem Ipsum has been the industry's standard dummy text ever since the
+          1500s, when an unknown printer took a galley of type and scrambled it
+          to make a type specimen book. */}
         </p>
         {inCart ? (
-          <button onClick={redirectToCart}>Go to Cart</button>
+          <button onClick={redirectToCart} className="goCart">
+            Go to Cart
+          </button>
         ) : (
           <button onClick={addItemToCart}>Add to Cart</button>
         )}
+        {inCart && <span>This product is in your cart.</span>}
       </div>
     </div>
   );

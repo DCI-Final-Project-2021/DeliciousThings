@@ -1,3 +1,4 @@
+// MOBILE
 nav {
   display: flex;
   justify-content: space-between;
@@ -62,7 +63,7 @@ nav {
     .nav-links {
       position: absolute;
       display: block;
-      top: 75px;
+      top: 10vh;
       left: 0;
       height: 90vh;
       background: $first-color;
@@ -138,3 +139,8 @@ nav {
     }
   }
 }
+
+// TABLET
+@media screen and (min-width: 480px) and (max-width: 959px) {}
+// DESKTOP
+@media screen and (min-width: 960px) {}

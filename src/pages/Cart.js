@@ -32,7 +32,7 @@ function Cart({ cart, setCart, totalPrice, setTotalPrice }) {
   };
 
   return (
-    <div>
+    <div style={{ height: "90vh" }}>
       {cart.length > 0 ? (
         <div className="carts">
           <h4>Your Shopping Cart</h4>
@@ -60,8 +60,10 @@ function Cart({ cart, setCart, totalPrice, setTotalPrice }) {
                   </div>
                 );
               })}
+              {/* <img src="./images/Booked_re_vtod.png" alt="shopping_items" /> */}
             </div>
             <div className="summary">
+              <img src="./images/shopping_cart.png" alt="shopping_cart" />
               <h6>Your order summary</h6>
               <p>
                 Total price: <span>{totalPrice}€</span>

@@ -1,9 +1,9 @@
 .cart {
   border: 1px solid $first-color;
   border-radius: 8px;
-  width: 500px;
-  margin: 7vh auto;
-  min-height: 600px;
+  width: 600px;
+  margin: 10vh auto;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,7 +44,15 @@
 @media all and (max-width: 768px) {
   .cart {
     margin: 1vh auto;
-    width: 95vw;
+    width: 100vw;
     min-height: 80vh;
+    border: none;
+    box-shadow: none;
   }
 }
+
+
+// TABLET
+@media screen and (min-width: 480px) and (max-width: 959px) {}
+// DESKTOP
+@media screen and (min-width: 960px) {}
