@@ -18,14 +18,10 @@ function App() {
 
   const [products, setProducts] = useState([]);
   const [totalPrice, setTotalPrice] = useState(() => {
-    let total = 0;
-    if (cart.length < 1) return 0;
-
-    cart.map((item) => {
-      total += item.price.slice(0, -1) * 1 * item.count;
-      return total;
-    });
+    const localData = localStorage.getItem("totalPrice");
+    return localData ? JSON.parse(localData) : 0;
   });
+
   const url = "http://localhost:2005/orders";
   //url degisecek
 
@@ -50,6 +46,7 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem("carts", JSON.stringify(cart));
+    localStorage.setItem("totalPrice", JSON.stringify(totalPrice));
   }, [cart]);
 
   return (
