@@ -9,6 +9,8 @@ import "./App.css";
 import menu from "./menu.json";
 import api from "./api/fetchDataFromDB";
 import fake from "./faker/fakeOrder.js";
+import dotenv from "dotenv";
+dotenv.config();
 
 function App() {
   const [cart, setCart] = useState(() => {
