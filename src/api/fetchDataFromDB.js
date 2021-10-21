@@ -10,7 +10,7 @@ export default {
   },
   createNewCustomer: async function (customer) {
     try {
-      const url = `http://localhost:2005/customers`;
+      const url = `${process.env.REACT_APP_API_SERVER}/customers`;
       const options = {
         method: "POST",
         headers: {
@@ -28,7 +28,7 @@ export default {
   },
   addOrderToCustomer: async function (order) {
     try {
-      const url = `http://localhost:2005/orders`;
+      const url = `${process.env.REACT_APP_API_SERVER}/orders`;
       const options = {
         method: "POST",
         headers: {

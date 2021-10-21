@@ -22,7 +22,7 @@ function App() {
     return localData ? JSON.parse(localData) : 0;
   });
 
-  const url = "http://localhost:2005/orders";
+  const url = `${process.env.REACT_APP_API_SERVER}/orders`;
   //url degisecek
 
   const addNewOrder = () => {
