@@ -4,8 +4,6 @@ import api from "../api/fetchDataFromDB";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // import { io } from "socket.io-client";
-import dotenv from "dotenv";
-dotenv.config();
 
 function Forms({ cart, setCart, totalPrice, setTotalPrice }) {
   const INITIAL_USER = {
