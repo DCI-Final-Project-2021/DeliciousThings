@@ -1,6 +1,7 @@
 import faker from "faker";
 import api from "../api/fetchDataFromDB.js";
 import menu from "./menu.json";
+import { io } from "socket.io-client";
 
 const cart = [];
 
@@ -46,18 +47,20 @@ const submitForm = () => {
     customerId: "",
     total: totalPrice(cart),
   };
-  
-  console.log("submit forma geldi");
+
   api.createNewCustomer(customerData).then((result) => {
-    console.log("res", result);
     const updatedOrder = {
       ...order,
       customerId: result._id,
       userId: result.user,
     };
-    console.log("Olusturulan yeni kullanici:", updatedOrder);
     api.addOrderToCustomer(updatedOrder).then((result) => {
-      console.log("Customer a siparis eklenmis mi:", result);
+      api.getOrderById(result._id).then((order) => {
+        let socket = io("http://localhost:2006");
+        socket.emit("cart", order);
+      });
+
+      return result;
     });
   });
 };
