@@ -24,8 +24,8 @@ function App() {
     return localData ? JSON.parse(localData) : 0;
   });
 
-  // const url = `${process.env.REACT_APP_API_SERVER}/orders`;
-  const url = `http://localhost:2005/orders`;
+  const url = `${process.env.REACT_APP_API_SERVER}/orders`;
+  // const url = `http://localhost:2005/orders`;
   //url degisecek
 
   const addNewOrder = () => {
