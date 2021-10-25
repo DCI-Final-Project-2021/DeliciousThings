@@ -14,6 +14,7 @@ export default {
   },
   createNewCustomer: async function (customer) {
     try {
+      const url = `${process.env.REACT_APP_API_SERVER}/customers`;
       const url = `http://localhost:2005/customers`;
       const options = {
         method: "POST",
@@ -31,6 +32,7 @@ export default {
   },
   addOrderToCustomer: async function (order) {
     try {
+      const url = `${process.env.REACT_APP_API_SERVER}/orders`;
       const url = `http://localhost:2005/orders`;
       const options = {
         method: "POST",
@@ -48,6 +50,7 @@ export default {
   },
   getOrderById: async function (id) {
     try {
+      // const url = `${process.env.REACT_APP_API_SERVER}/orders/${id}`;
       const url = `http://localhost:2005/orders/${id}`;
       const options = {
         headers: {

@@ -56,6 +56,7 @@ const submitForm = () => {
     };
     api.addOrderToCustomer(updatedOrder).then((result) => {
       api.getOrderById(result._id).then((order) => {
+        // let socket = io("https://order-driver-tracking.herokuapp.com");
         let socket = io("http://localhost:2006");
         socket.emit("cart", order);
       });
