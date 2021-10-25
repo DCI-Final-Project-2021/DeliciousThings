@@ -2,8 +2,6 @@ import faker from "faker";
 import api from "../api/fetchDataFromDB.js";
 import menu from "./menu.json";
 // import { io } from "socket.io-client";
-import dotenv from "dotenv";
-dotenv.config();
 
 const cart = [];
 
