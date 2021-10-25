@@ -24,7 +24,7 @@ function App() {
     return localData ? JSON.parse(localData) : 0;
   });
 
-  const url = `${process.env.REACT_APP_API_SERVER}/orders`;
+  const url = `http://localhost:2005/orders`;
   //url degisecek
 
   const addNewOrder = () => {
@@ -66,7 +66,7 @@ function App() {
             <Login />
           </Route>
           <Route path="/form">
-            <Form cart={cart} totalPrice={totalPrice} />
+            <Form cart={cart} setCart={setCart} totalPrice={totalPrice} setTotalPrice={setTotalPrice} />
           </Route>
         </Switch>
       </BrowserRouter>
