@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import api from "../api/fetchDataFromDB";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { io } from "socket.io-client";
+// import { io } from "socket.io-client";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -48,8 +48,8 @@ function Forms({ cart, setCart, totalPrice, setTotalPrice }) {
           api.getOrderById(result._id).then((order) => {
             // let socket = io("https://order-driver-tracking.herokuapp.com");
             // let socket = io("http://localhost:2006");
-            let socket = io(process.env.PORT);
-            socket.emit("cart", order);
+            // let socket = io(process.env.PORT);
+            // socket.emit("cart", order);
           });
           return result;
         });

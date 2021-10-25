@@ -1,6 +1,6 @@
-// import dotenv from "dotenv";
-// dotenv.config();
-// import { io } from "socket.io-client";
+import dotenv from "dotenv";
+dotenv.config();
+
 
 export default {
   fetchDataFromDataBase: async function (url) {
