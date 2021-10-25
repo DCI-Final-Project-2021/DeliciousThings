@@ -5,7 +5,6 @@ import menu from "../menu.json";
 function Category({ category, cart, setCart, totalPrice, setTotalPrice }) {
   return (
     <div className="category">
-      {/* //buraya resim ekle */}
       <h1>{category}</h1>
       <div className="items">
         {menu.map((item, i) => {

@@ -3,9 +3,17 @@ import { useHistory } from "react-router-dom";
 import api from "../api/fetchDataFromDB";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { io } from "socket.io-client";
 
-function Forms({ cart, totalPrice }) {
-  const INITIAL_USER = { name: "", surname: "", email: "", tel: "", address: "", city: ""};
+function Forms({ cart, setCart, totalPrice, setTotalPrice }) {
+  const INITIAL_USER = {
+    name: "",
+    surname: "",
+    email: "",
+    tel: "",
+    address: "",
+    city: "",
+  };
   const [customerData, setCustomerData] = useState(INITIAL_USER);
   const [order, setOrder] = useState({
     food: [...cart],
@@ -21,7 +29,6 @@ function Forms({ cart, totalPrice }) {
     const isFieldsMissing = Object.keys(INITIAL_USER).some(
       (key) => customerData[key] === ""
     );
-    console.log("giwe," , isFieldsMissing);
     if (isFieldsMissing) {
       toast.error(" All fields are required...");
       return;
@@ -35,22 +42,34 @@ function Forms({ cart, totalPrice }) {
           userId: result.user,
         };
         setOrder(updatedOrder);
-        console.log("Olusturulan yeni kullanici:", updatedOrder);
         api.addOrderToCustomer(updatedOrder).then((result) => {
-          console.log("Customer a siparis eklenmis mi:", result);
+          api.getOrderById(result._id).then((order) => {
+            // let socket = io("https://order-driver-tracking.herokuapp.com");
+            let socket = io("http://localhost:2006");
+            socket.emit("cart", order);
+          });
+          return result;
         });
+        toast.success("Your order has been sent...");
+        setCart([]);
+        setTotalPrice(0);
+        localStorage.setItem("totalPrice", JSON.stringify(0));
+        setCustomerData(INITIAL_USER);
       });
     } catch (err) {
       console.log({ err });
+      toast.error("Something went wrong...");
     }
 
-    history.push("/");
+    setTimeout(() => {
+      history.push("/");
+    }, 3000);
   };
 
   return (
-    <div>
+    <div className="forms">
+      <img src="./images/fill_form.png" alt="fill_form"></img>
       <form onSubmit={submitForm}>
-        <img src="./images/fill_form.png" alt="fill_form"></img>
         <h5>Fill out the form to complete the order.</h5>
         <label>
           <input
