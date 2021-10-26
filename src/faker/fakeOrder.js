@@ -1,7 +1,7 @@
 import faker from "faker";
 import api from "../api/fetchDataFromDB.js";
 import menu from "./menu.json";
-// import { io } from "socket.io-client";
+import { io } from "socket.io-client";
 
 const cart = [];
 
