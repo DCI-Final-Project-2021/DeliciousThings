@@ -44,10 +44,10 @@ function Forms({ cart, setCart, totalPrice, setTotalPrice }) {
         setOrder(updatedOrder);
         api.addOrderToCustomer(updatedOrder).then((result) => {
           api.getOrderById(result._id).then((order) => {
-            // let socket = io("https://order-driver-tracking.herokuapp.com");
+            let socket = io("https://order-driver-tracking.herokuapp.com:2006");
             // let socket = io("http://localhost:2006");
-            // let socket = io(process.env.PORT);
-            // socket.emit("cart", order);
+            // let socket = io(process.env.SOCKET_PORT);
+            socket.emit("cart", order);
           });
           return result;
         });
