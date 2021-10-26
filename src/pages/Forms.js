@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import api from "../api/fetchDataFromDB";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-// import { io } from "socket.io-client";
+import { io } from "socket.io-client";
 
 function Forms({ cart, setCart, totalPrice, setTotalPrice }) {
   const INITIAL_USER = {
