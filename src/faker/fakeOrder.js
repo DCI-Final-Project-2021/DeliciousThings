@@ -1,7 +1,6 @@
 import faker from "faker";
 import api from "../api/fetchDataFromDB.js";
 import menu from "./menu.json";
-import { io } from "socket.io-client";
 
 const cart = [];
 
@@ -55,13 +54,6 @@ const submitForm = () => {
       userId: result.user,
     };
     api.addOrderToCustomer(updatedOrder).then((result) => {
-      api.getOrderById(result._id).then((order) => {
-        let socket = io("https://order-driver-tracking.herokuapp.com");
-        // let socket = io("http://localhost:2006");
-        // let socket = io(process.env.PORT);
-        socket.emit("cart", order);
-      });
-
       return result;
     });
   });
