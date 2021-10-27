@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import api from "../api/fetchDataFromDB";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { io } from "socket.io-client";
+// import { io } from "socket.io-client";
 
 function Forms({ cart, setCart, totalPrice, setTotalPrice }) {
   const INITIAL_USER = {
@@ -43,11 +43,11 @@ function Forms({ cart, setCart, totalPrice, setTotalPrice }) {
         };
         setOrder(updatedOrder);
         api.addOrderToCustomer(updatedOrder).then((result) => {
-          api.getOrderById(result._id).then((order) => {
+          // api.getOrderById(result._id).then((order) => {
             // let socket = io("https://order-driver-tracking.herokuapp.com");
-            let socket = io("http://localhost:2006");
-            socket.emit("cart", order);
-          });
+            // let socket = io("http://localhost:2006");
+            // socket.emit("cart", order);
+          // });
           return result;
         });
         toast.success("Your order has been sent...");

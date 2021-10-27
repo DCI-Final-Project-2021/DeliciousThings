@@ -1,7 +1,7 @@
 import faker from "faker";
 import api from "../api/fetchDataFromDB.js";
 import menu from "./menu.json";
-import { io } from "socket.io-client";
+// import { io } from "socket.io-client";
 
 const cart = [];
 
@@ -32,22 +32,24 @@ const totalPrice = (carts) => {
 };
 
 const submitForm = () => {
-  const customerData = {
+  let customerData = {};
+  customerData = {
     name: faker.name.firstName(),
     surname: faker.name.lastName(),
     email: faker.internet.email(),
-    tel: "12341234",
+    tel: faker.phone.phoneNumber(),
     address: faker.address.streetAddress(),
     city: faker.address.city(),
   };
-
+  
   const order = {
     food: cartFunction(),
     userId: "",
     customerId: "",
     total: totalPrice(cart),
   };
-
+  console.log("submit form", order);
+  
   api.createNewCustomer(customerData).then((result) => {
     const updatedOrder = {
       ...order,
@@ -55,11 +57,11 @@ const submitForm = () => {
       userId: result.user,
     };
     api.addOrderToCustomer(updatedOrder).then((result) => {
-      api.getOrderById(result._id).then((order) => {
+      // api.getOrderById(result._id).then((order) => {
         // let socket = io("https://order-driver-tracking.herokuapp.com");
-        let socket = io("http://localhost:2006");
-        socket.emit("cart", order);
-      });
+        // let socket = io("http://localhost:2006");
+        // socket.emit("cart", order);
+      // });
 
       return result;
     });
